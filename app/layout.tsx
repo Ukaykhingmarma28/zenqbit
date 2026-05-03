@@ -35,7 +35,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${uncutSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${uncutSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

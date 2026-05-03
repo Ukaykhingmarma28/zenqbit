@@ -35,12 +35,12 @@ const slides: Slide[] = [
     ctaHref: "/contact",
     stats: [
       {
-        image: "https://i.pravatar.cc/400?img=12",
+        image: "/avatars/12.jpg",
         value: "18+",
         label: "Years of Experience",
       },
       {
-        image: "https://i.pravatar.cc/400?img=25",
+        image: "/avatars/25.jpg",
         value: "98%",
         label: "Client Retention",
       },
@@ -54,12 +54,12 @@ const slides: Slide[] = [
     ctaHref: "/contact",
     stats: [
       {
-        image: "https://i.pravatar.cc/400?img=32",
+        image: "/avatars/32.jpg",
         value: "15+",
         label: "Projects Delivered",
       },
       {
-        image: "https://i.pravatar.cc/400?img=47",
+        image: "/avatars/47.jpg",
         value: "24/7",
         label: "Support Coverage",
       },
@@ -73,12 +73,12 @@ const slides: Slide[] = [
     ctaHref: "/services/ai-solutions",
     stats: [
       {
-        image: "https://i.pravatar.cc/400?img=68",
+        image: "/avatars/68.jpg",
         value: "6+",
         label: "Tech Domains",
       },
       {
-        image: "https://i.pravatar.cc/400?img=15",
+        image: "/avatars/15.jpg",
         value: "100%",
         label: "Client Satisfaction",
       },
@@ -115,7 +115,7 @@ export function HeroSlider() {
       className="w-full"
     >
       <CarouselContent>
-        {slides.map((slide) => (
+        {slides.map((slide, slideIndex) => (
           <CarouselItem key={slide.headline}>
             <div className="relative w-full overflow-hidden text-left text-foreground lg:aspect-[16/6]">
 
@@ -150,7 +150,7 @@ export function HeroSlider() {
                           fill
                           sizes="72px"
                           className="object-cover"
-                          unoptimized
+                          {...(slideIndex === 0 && { priority: true, loading: "eager" })}
                         />
                       </div>
                       <div>
@@ -184,7 +184,7 @@ export function HeroSlider() {
                         fill
                         sizes="200px"
                         className="object-cover"
-                        unoptimized
+                        {...(slideIndex === 0 && { priority: true, loading: "eager" })}
                       />
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export function HeroSlider() {
                         fill
                         sizes="200px"
                         className="object-cover"
-                        unoptimized
+                        {...(slideIndex === 0 && { priority: true, loading: "eager" })}
                       />
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">

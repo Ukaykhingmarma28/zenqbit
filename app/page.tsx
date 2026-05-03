@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
@@ -22,6 +23,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { services } from "@/lib/services";
+import { industries } from "@/lib/industries";
 import { HeroFlow } from "@/components/hero-flow";
 import { HeroSlider } from "@/components/hero-slider";
 import { FeaturesShowcase } from "@/components/features-showcase";
@@ -84,9 +86,14 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-muted/30 pb-40 lg:pb-52">
         {/* Background image — dotted hands artwork */}
-        <div
+        <Image
+          src="/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-10 object-cover opacity-40"
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat opacity-40"
         />
         {/* Soft overlay to keep content readable */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
@@ -195,7 +202,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-2 overflow-hidden rounded-2xl lg:block">
-                <img src="/service-1.png" alt="Staff Augmentation" className="h-full w-full object-cover" />
+                <Image src="/service-1.png" alt="Staff Augmentation" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-3">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -214,7 +221,7 @@ export default function Home() {
             {/* ── Row 2: Image | Text | Image ── */}
             <div className="grid gap-8 lg:grid-cols-[1fr_1.35fr_1fr]">
               <div className="hidden animate-fade-up delay-1 overflow-hidden rounded-2xl lg:block">
-                <img src="/service-2.png" alt="MVP Development" className="h-full w-full object-cover" />
+                <Image src="/service-2.png" alt="MVP Development" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-2 px-0 lg:px-8">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -229,7 +236,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-3 overflow-hidden rounded-2xl lg:block">
-                <img src="/service-3.png" alt="MVP Development" className="h-full w-full object-cover" />
+                <Image src="/service-3.png" alt="MVP Development" width={600} height={400} className="h-full w-full object-cover" />
               </div>
             </div>
 
@@ -248,7 +255,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-2 overflow-hidden rounded-2xl lg:block">
-                <img src="/service-4.png" alt="Technology Consulting" className="h-full w-full object-cover" />
+                <Image src="/service-4.png" alt="Technology Consulting" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-3">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -367,112 +374,49 @@ export default function Home() {
 
           {/* Industry cards */}
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: "EdTech",
-                desc: "LMS solutions built with Moodle, live classes, assessments, compliance & reporting to empower learners worldwide.",
-                tags: ["LMS", "Moodle", "Live Classes"],
-                topBg: "#d6e8f5",
-                tagBg: "#bcd8ee",
-              },
-              {
-                name: "Fintech",
-                desc: "Secure, scalable fintech & blockchain platforms built to transform payments, lending, and risk management.",
-                tags: ["Payments", "Blockchain", "Lending", "KYC"],
-                topBg: "#e8cdb5",
-                tagBg: "#d9b99a",
-              },
-              {
-                name: "E-Commerce",
-                desc: "Transform your store with certified themes, plugins & custom reporting for speed, UX & conversion optimization.",
-                tags: ["Shopify", "Magento", "WooCommerce"],
-                topBg: "#d4c8e8",
-                tagBg: "#c0b0d8",
-              },
-              {
-                name: "Pharma",
-                desc: "Regulation-first pharma & healthcare software, compliant platforms supporting HIPAA, e-prescripts & analytics.",
-                tags: ["HIPAA", "e-Prescripts", "Compliance"],
-                topBg: "#b5d9cc",
-                tagBg: "#97c9bb",
-              },
-              {
-                name: "Telecom",
-                desc: "Enterprise-grade telecom applications that scale securely to serve millions with reliability & speed.",
-                tags: ["VoIP", "Network", "Billing", "IoT"],
-                topBg: "#d6e8f5",
-                tagBg: "#bcd8ee",
-              },
-              {
-                name: "Retail",
-                desc: "Smart retail systems streamlining inventory, customer journeys & promotions for sustainable business growth.",
-                tags: ["POS", "Inventory", "CRM"],
-                topBg: "#e8cdb5",
-                tagBg: "#d9b99a",
-              },
-              {
-                name: "Software / ITES",
-                desc: "Cutting-edge custom software & IT-enabled solutions solving complex problems with innovation & agility.",
-                tags: ["SaaS", "Enterprise", "Cloud", "API"],
-                topBg: "#d4c8e8",
-                tagBg: "#c0b0d8",
-              },
-              {
-                name: "Start-Ups",
-                desc: "Lean, fast-moving digital builds for startups. MVPs, product-market fit & scalable tech from day one.",
-                tags: ["MVP", "Product-Market Fit", "Rapid"],
-                topBg: "#b5d9cc",
-                tagBg: "#97c9bb",
-              },
-              { name: null, desc: null, tags: [], topBg: "", tagBg: "" },
-            ].map((industry, i) => {
-              const isContact = industry.name === null;
-              return (
+            {industries.map((industry, i) => (
+              <Link
+                key={industry.slug}
+                href={`/industries/${industry.slug}`}
+                className={`animate-fade-up delay-${Math.min(i + 1, 5)} group/card flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card`}
+              >
+                {/* Colored top section */}
                 <div
-                  key={industry.name ?? "cta"}
-                  className={`animate-fade-up delay-${Math.min(i + 1, 5)} group/card flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card`}
+                  className="mx-2 mt-2 flex flex-1 flex-col rounded-2xl px-6 pb-5 pt-6"
+                  style={{ backgroundColor: industry.color }}
                 >
-                  {isContact ? (
-                    <div className="flex flex-1 flex-col items-center justify-center gap-5 p-8 text-center">
-                      <h3 className="text-lg font-semibold">
-                        Is your industry here?
-                      </h3>
-                      <Link
-                        href="/contact"
-                        className="inline-flex h-10 items-center rounded-full bg-brand-coral px-7 text-sm font-semibold text-white transition-all hover:bg-brand-coral/90"
-                      >
-                        Let&apos;s Talk
-                      </Link>
-                    </div>
-                  ) : (
-                    <>
-                      {/* Colored top section */}
-                      <div
-                        className="mx-2 mt-2 flex flex-1 flex-col rounded-2xl px-6 pb-5 pt-6"
-                        style={{ backgroundColor: industry.topBg }}
-                      >
-                        <h3 className="text-[26px] font-extrabold leading-tight tracking-tight text-brand-dark">
-                          {industry.name}
-                        </h3>
-                        <p className="mt-2 text-[14px] leading-relaxed text-brand-dark/60">
-                          {industry.desc}
-                        </p>
-                      </div>
-
-                      {/* White footer */}
-                      <div className="flex items-center justify-between px-6 py-4">
-                        <span className="text-[16px] font-bold text-brand-dark dark:text-foreground">
-                          Explore
-                        </span>
-                        <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover/card:bg-brand-dark dark:bg-muted dark:group-hover/card:bg-foreground">
-                          <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover/card:text-white dark:text-foreground/70 dark:group-hover/card:text-brand-dark" />
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  <h3 className="text-[26px] font-extrabold leading-tight tracking-tight text-brand-dark">
+                    {industry.name}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-brand-dark/60">
+                    {industry.tagline}
+                  </p>
                 </div>
-              );
-            })}
+
+                {/* White footer */}
+                <div className="flex items-center justify-between px-6 py-4">
+                  <span className="text-[16px] font-bold text-brand-dark dark:text-foreground">
+                    Explore
+                  </span>
+                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover/card:bg-brand-dark dark:bg-muted dark:group-hover/card:bg-foreground">
+                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover/card:text-white dark:text-foreground/70 dark:group-hover/card:text-brand-dark" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+
+            {/* CTA card */}
+            <div className="animate-fade-up delay-5 flex flex-col items-center justify-center gap-5 overflow-hidden rounded-[20px] bg-white p-8 text-center shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:bg-card">
+              <h3 className="text-lg font-semibold">
+                Is your industry here?
+              </h3>
+              <Link
+                href="/contact"
+                className="inline-flex h-10 items-center rounded-full bg-brand-coral px-7 text-sm font-semibold text-white transition-all hover:bg-brand-coral/90"
+              >
+                Let&apos;s Talk
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -489,9 +433,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[42px]">
                 AI-Driven
                 <br />
-                Development
-                <br />
-                Excellence
+                Development Excellence
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted-foreground">
                 We combine cutting-edge AI tools with battle-tested engineering
@@ -501,9 +443,11 @@ export default function Home() {
 
               {/* Image */}
               <div className="mt-8 overflow-hidden rounded-2xl">
-                <img
-                  src="/service-2.png"
+                <Image
+                  src="/working-zenqbit.png"
                   alt="Team collaborating on development"
+                  width={800}
+                  height={500}
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -733,7 +677,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <img src="/office-bangladesh.svg" alt="Bangladesh" className="hidden h-full w-40 object-contain pr-4 sm:block" />
+              <Image src="/office-bangladesh.svg" alt="Bangladesh" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
             </div>
 
             {/* Malaysia */}
@@ -760,7 +704,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <img src="/office-malaysia.svg" alt="Malaysia" className="hidden h-full w-40 object-contain pr-4 sm:block" />
+              <Image src="/office-malaysia.svg" alt="Malaysia" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
             </div>
           </div>
         </div>

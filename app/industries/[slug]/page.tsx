@@ -16,11 +16,12 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { services, getServiceBySlug } from "@/lib/services";
+import { industries, getIndustryBySlug } from "@/lib/industries";
+import { services } from "@/lib/services";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
+  return industries.map((ind) => ({ slug: ind.slug }));
 }
 
 export async function generateMetadata({
@@ -29,24 +30,24 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  if (!service) return {};
+  const industry = getIndustryBySlug(slug);
+  if (!industry) return {};
   return {
-    title: `${service.title} — Zenqbit`,
-    description: service.description,
+    title: `${industry.name} Solutions — Zenqbit`,
+    description: industry.description,
   };
 }
 
-export default async function ServicePage({
+export default async function IndustryPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  if (!service) notFound();
+  const industry = getIndustryBySlug(slug);
+  if (!industry) notFound();
 
-  const otherServices = services.filter((s) => s.slug !== slug);
+  const otherIndustries = industries.filter((ind) => ind.slug !== slug);
 
   return (
     <>
@@ -57,27 +58,37 @@ export default async function ServicePage({
 
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-20 lg:pb-24 lg:pt-28">
           <Link
-            href="/#our-services"
+            href="/#industries"
             className="mb-8 inline-flex items-center gap-2 rounded-md text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="size-4" />
-            All Services
+            All Industries
           </Link>
 
           <div className="flex items-start gap-5">
-            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-brand-coral/10">
-              <service.icon className="size-7 text-brand-coral" />
+            <div
+              className="flex size-14 shrink-0 items-center justify-center rounded-xl"
+              style={{ backgroundColor: `${industry.color}` }}
+            >
+              <industry.icon className="size-7 text-brand-dark" />
             </div>
             <div>
+              <p className="mb-2 text-sm font-medium text-muted-foreground">
+                {industry.tagline}
+              </p>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                {service.title}
+                {industry.name}
               </h1>
               <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                {service.longDescription}
+                {industry.description}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="px-3 py-1">
+                {industry.tags.map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant="secondary"
+                    className="px-3 py-1"
+                  >
                     {tag}
                   </Badge>
                 ))}
@@ -90,7 +101,7 @@ export default async function ServicePage({
                     "h-12 bg-brand-coral px-6 text-base hover:bg-brand-coral/90"
                   )}
                 >
-                  Get a Quote
+                  Discuss Your Project
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
                 <Link
@@ -108,21 +119,21 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {/* ── Features Grid ── */}
+      {/* ── What We Build ── */}
       <section className="py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-coral">
-              What We Offer
+              What We Build
             </p>
             <h2 className="max-w-lg text-3xl font-bold tracking-tight sm:text-4xl">
-              Capabilities
+              Solutions for {industry.name}
             </h2>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {service.features.map((feature, i) => (
-              <div key={feature.title} className={`group delay-${Math.min(i + 1, 5)}`}>
+            {industry.features.map((feature) => (
+              <div key={feature.title}>
                 <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-brand-coral/10">
                   <CheckCircle2 className="size-5 text-brand-coral" />
                 </div>
@@ -139,80 +150,85 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {/* ── Process ── */}
+      {/* ── Use Cases ── */}
       <section className="border-t bg-muted/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-14 text-center">
+          <div className="mb-14">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-coral">
-              How We Work
+              Proven Results
             </p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Our Process
+              How We&apos;ve Helped
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-              A proven methodology that delivers predictable results — no surprises.
-            </p>
           </div>
 
-          <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="absolute left-[20px] right-[20px] top-[19px] hidden h-px bg-border lg:block" />
-
-            {service.process.map((step, i) => (
-              <div key={step.title} className="relative">
-                <div className="relative z-10 mb-5 flex size-10 items-center justify-center rounded-full border-2 border-brand-teal/30 bg-brand-teal/10 bg-background">
-                  <span className="text-sm font-bold text-brand-teal">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {industry.useCases.map((useCase) => (
+              <div
+                key={useCase.title}
+                className="group overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card"
+              >
+                <div
+                  className="mx-2 mt-2 rounded-2xl px-6 pb-5 pt-6"
+                  style={{ backgroundColor: industry.color }}
+                >
+                  <h3 className="text-xl font-bold tracking-tight text-brand-dark">
+                    {useCase.title}
+                  </h3>
+                  <p className="mt-2 text-[14px] leading-relaxed text-brand-dark/60">
+                    {useCase.description}
+                  </p>
                 </div>
-
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-brand-teal">
-                  Step {i + 1}
-                </span>
-                <h3 className="mt-2 text-lg font-bold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                  {step.description}
-                </p>
+                <div className="flex items-center justify-between px-6 py-4">
+                  <span className="text-sm font-bold">View Details</span>
+                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover:bg-brand-dark dark:bg-muted dark:group-hover:bg-foreground">
+                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover:text-white dark:text-foreground/70 dark:group-hover:text-brand-dark" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Use Cases ── */}
+      {/* ── Relevant Services ── */}
       <section className="border-t py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-coral">
-              Real-World Impact
+              How We Can Help
             </p>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Use Cases
+              Services for {industry.name}
             </h2>
+            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+              We bring together the right combination of services to address
+              your industry&apos;s unique challenges.
+            </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {service.useCases.map((useCase) => (
-              <div
-                key={useCase.industry}
-                className="group overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card"
+            {services.slice(0, 3).map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group block rounded-xl"
               >
-                <div className="mx-2 mt-2 rounded-2xl bg-brand-coral/5 px-6 pb-5 pt-6">
-                  <h3 className="text-xl font-bold tracking-tight">
-                    {useCase.industry}
-                  </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">
-                    {useCase.description}
-                  </p>
-                </div>
-                <div className="flex items-center justify-between px-6 py-4">
-                  <span className="text-sm font-bold">Learn More</span>
-                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover:bg-brand-dark dark:bg-muted dark:group-hover:bg-foreground">
-                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover:text-white dark:text-foreground/70 dark:group-hover:text-brand-dark" />
-                  </div>
-                </div>
-              </div>
+                <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+                  <CardHeader>
+                    <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-brand-coral/10 transition-colors duration-200 group-hover:bg-brand-coral/15">
+                      <service.icon className="size-5 text-brand-coral" />
+                    </div>
+                    <CardTitle className="flex items-center gap-2">
+                      {service.title}
+                      <ArrowRight className="size-4 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-60" />
+                    </CardTitle>
+                    <CardDescription className="leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -231,7 +247,7 @@ export default async function ServicePage({
           </div>
 
           <div className="space-y-4">
-            {service.faqs.map((faq) => (
+            {industry.faqs.map((faq) => (
               <details
                 key={faq.question}
                 className="group rounded-xl border border-border/50 bg-card transition-shadow hover:shadow-sm"
@@ -251,15 +267,15 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {/* ── Other Services ── */}
+      {/* ── Other Industries ── */}
       <section className="border-t py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-10 flex items-end justify-between">
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Other Services
+              Other Industries
             </h2>
             <Link
-              href="/#our-services"
+              href="/#industries"
               className="group hidden items-center gap-2 text-sm font-semibold text-brand-coral transition-colors hover:text-brand-coral/80 sm:inline-flex"
             >
               View All
@@ -267,57 +283,35 @@ export default async function ServicePage({
             </Link>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {otherServices.slice(0, 3).map((s) => (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {otherIndustries.map((ind) => (
               <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="group block rounded-xl"
+                key={ind.slug}
+                href={`/industries/${ind.slug}`}
+                className="group/card block overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card"
               >
-                <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                  <CardHeader>
-                    <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-brand-coral/10 transition-colors duration-200 group-hover:bg-brand-coral/15">
-                      <s.icon className="size-5 text-brand-coral" />
-                    </div>
-                    <CardTitle className="flex items-center gap-2">
-                      {s.title}
-                      <ArrowRight className="size-4 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-60" />
-                    </CardTitle>
-                    <CardDescription className="leading-relaxed">
-                      {s.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                <div
+                  className="mx-2 mt-2 rounded-2xl px-5 pb-4 pt-5"
+                  style={{ backgroundColor: ind.color }}
+                >
+                  <h3 className="text-lg font-extrabold tracking-tight text-brand-dark">
+                    {ind.name}
+                  </h3>
+                  <p className="mt-1 text-[13px] leading-relaxed text-brand-dark/60 line-clamp-2">
+                    {ind.tagline}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between px-5 py-3">
+                  <span className="text-[14px] font-bold text-brand-dark dark:text-foreground">
+                    Explore
+                  </span>
+                  <div className="flex size-8 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover/card:bg-brand-dark dark:bg-muted dark:group-hover/card:bg-foreground">
+                    <ArrowRight className="size-3.5 text-brand-dark/70 transition-colors duration-200 group-hover/card:text-white dark:text-foreground/70 dark:group-hover/card:text-brand-dark" />
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
-
-          {otherServices.length > 3 && (
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
-              {otherServices.slice(3).map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/services/${s.slug}`}
-                  className="group block rounded-xl"
-                >
-                  <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
-                    <CardHeader>
-                      <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-brand-coral/10 transition-colors duration-200 group-hover:bg-brand-coral/15">
-                        <s.icon className="size-5 text-brand-coral" />
-                      </div>
-                      <CardTitle className="flex items-center gap-2">
-                        {s.title}
-                        <ArrowRight className="size-4 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-60" />
-                      </CardTitle>
-                      <CardDescription className="leading-relaxed">
-                        {s.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
@@ -326,11 +320,11 @@ export default async function ServicePage({
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_120%,hsl(var(--primary)/0.06),transparent)]" />
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to get started?
+            Ready to build for {industry.name}?
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Tell us about your {service.title.toLowerCase()} project and
-            we&apos;ll get back to you within 24 hours.
+            Tell us about your project and we&apos;ll show you how our{" "}
+            {industry.name.toLowerCase()} expertise can make it happen.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link

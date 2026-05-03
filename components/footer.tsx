@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
 const industries = [
@@ -85,12 +84,10 @@ export function Footer() {
           {/* Logo + description */}
           <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="focus-ring inline-block rounded-md">
-              <Image
+              <img
                 src="/logo.svg"
                 alt="Zenqbit"
-                width={123}
-                height={27}
-                className="dark:invert"
+                className="h-[27px] w-auto dark:invert"
               />
             </Link>
             <p className="max-w-xs text-[13px] leading-relaxed text-muted-foreground">
