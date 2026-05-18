@@ -2,57 +2,45 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
 const industries = [
-  { label: "Fintech", href: "#" },
-  { label: "Pharma", href: "#" },
-  { label: "Telecom", href: "#" },
-  { label: "Real Estate", href: "#" },
-  { label: "Software/ITES", href: "#" },
+  { label: "Fintech", href: "/industries/fintech" },
+  { label: "Pharma & Healthcare", href: "/industries/pharma-healthcare" },
+  { label: "Telecom", href: "/industries/telecom" },
+  { label: "E-Commerce", href: "/industries/e-commerce" },
 ];
 
 const industries2 = [
-  { label: "E-Commerce", href: "#" },
-  { label: "Education", href: "#" },
-  { label: "Retail", href: "#" },
-  { label: "Automotive", href: "#" },
-  { label: "Startup", href: "#" },
+  { label: "EdTech", href: "/industries/edtech" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Software & ITES", href: "/industries/software-ites" },
+  { label: "Startups", href: "/industries/startups" },
 ];
 
 const company = [
   { label: "About Us", href: "/about" },
-  { label: "Case Studies", href: "/work" },
+  { label: "Our Work", href: "/work" },
   { label: "Blog", href: "/blog" },
   { label: "Career", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
-const resources = [
-  { label: "Certifications & Awards", href: "#" },
-  { label: "Partners", href: "#" },
-  { label: "Enterprise-Grade Security", href: "#" },
-  { label: "Sustainability", href: "#" },
-  { label: "Events", href: "#" },
+const services = [
+  { label: "Web Development", href: "/services/web-development" },
+  { label: "AI Solutions", href: "/services/ai-solutions" },
+  { label: "IoT Solutions", href: "/services/iot-solutions" },
+  { label: "Mobile Apps", href: "/services/mobile-apps" },
+  { label: "Automation", href: "/services/automation" },
 ];
 
 const socials = [
   {
-    label: "Facebook",
-    href: "#",
-    svg: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />,
-  },
-  {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/zenqbit",
     svg: <><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></>,
   },
   {
-    label: "Twitter",
-    href: "#",
-    svg: <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />,
-  },
-  {
-    label: "YouTube",
-    href: "#",
-    svg: <><path d="M2.5 17a24.12 24.12 0 010-10 2 2 0 011.4-1.4 49.56 49.56 0 0116.2 0A2 2 0 0121.5 7a24.12 24.12 0 010 10 2 2 0 01-1.4 1.4 49.55 49.55 0 01-16.2 0A2 2 0 012.5 17" /><path d="M10 15l5-3-5-3z" /></>,
+    label: "Facebook",
+    href: "https://www.facebook.com/zenqbit",
+    svg: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />,
   },
 ];
 
@@ -63,11 +51,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 pt-16 lg:pt-20">
         <div className="overflow-hidden rounded-3xl bg-muted/60 px-6 py-14 text-center sm:px-12 lg:py-16">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-            Ready to Scale Your Team?
+            Let&apos;s Build Something Great Together
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-muted-foreground">
-            Let&apos;s discuss how our resource augmentation and AI-powered
-            development can accelerate your project delivery.
+            Book a free 30-minute consultation. We&apos;ll explore your project
+            goals and show how our engineering team can deliver results.
           </p>
           <Link
             href="/contact"
@@ -91,9 +79,9 @@ export function Footer() {
               />
             </Link>
             <p className="max-w-xs text-[13px] leading-relaxed text-muted-foreground">
-              A nearly self-sufficient technology company specializing
-              in resource augmentation. We deliver 10X faster
-              solutions in Fintech, Pharma, Retail & Distribution.
+              Custom software, AI, and IoT solutions built by skilled
+              engineers across Malaysia and Bangladesh. From startups
+              to enterprises — we ship scalable products that work.
             </p>
             {/* Social icons */}
             <div className="flex gap-3 pt-2">
@@ -163,11 +151,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Services */}
           <div className="space-y-3">
-            <h4 className="text-sm font-semibold">Resources</h4>
+            <h4 className="text-sm font-semibold">Services</h4>
             <ul className="space-y-2.5">
-              {resources.map((link) => (
+              {services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

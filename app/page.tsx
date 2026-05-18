@@ -3,16 +3,12 @@ import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
-  MessageSquare,
-  Search,
-  Layers,
   Rocket,
   UsersRound,
   Settings2,
   Lightbulb,
   RefreshCcw,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -27,62 +23,68 @@ import { industries } from "@/lib/industries";
 import { HeroFlow } from "@/components/hero-flow";
 import { HeroSlider } from "@/components/hero-slider";
 import { FeaturesShowcase } from "@/components/features-showcase";
+import { JsonLd } from "@/components/json-ld";
+import { getWebPageSchema } from "@/lib/schemas";
 
 const processSteps = [
   {
     step: "Step 1",
-    label: "AI-Powered Discovery Audit",
-    title: "Zero-risk assessment, tailored roadmap",
+    label: "Discovery & Strategy",
+    title: "Understand your goals, map the roadmap",
     bullets: [
-      "Free 60-min strategy session to analyze your tech stack",
-      "AI-driven scoping tool estimates timelines & savings",
-      "Receive a GDPR/ISO 27001-compliant project blueprint",
+      "Free 30-min consultation to assess your project needs",
+      "Technical scoping with timeline and cost estimates",
+      "Architecture blueprint aligned with industry standards",
     ],
   },
   {
     step: "Step 2",
-    label: "Hybrid Team Onboarding",
-    title: "Right talent + AI tools from day one",
+    label: "Team Assembly",
+    title: "Right engineers, matched to your project",
     bullets: [
-      "Match with vetted engineers (800+ experts)",
-      "AI-augmented sprint planning for 10x faster kickoff",
-      "Dedicated PM + automated progress dashboards",
+      "Hand-picked engineers matched to your tech stack",
+      "Access to a vetted network of specialists when needed",
+      "Dedicated project manager and progress dashboards",
     ],
   },
   {
     step: "Step 3",
-    label: "Build with AI Guardrails",
-    title: "Code, test, deploy — smarter",
+    label: "Agile Development",
+    title: "Build, test, iterate — every sprint",
     bullets: [
-      "AI pair-programming assistants (70% faster dev)",
-      "Self-healing test suites (94.1% reliability)",
-      "Real-time compliance checks (SOC 2100 standard)",
+      "AI-assisted development for faster delivery",
+      "Automated testing and continuous integration",
+      "Code reviews following OWASP and ISO 27001 standards",
     ],
   },
   {
     step: "Step 4",
-    label: "Scale with Confidence",
-    title: "Your growth, automated",
+    label: "Launch & Scale",
+    title: "Ship with confidence, grow without limits",
     bullets: [
-      "AI-optimized cloud deployment",
-      "Continuous performance monitoring + predictive scaling",
-      "90-day post-launch support with AI-driven analytics",
+      "Production deployment with monitoring from day one",
+      "Performance optimization and predictive scaling",
+      "Post-launch support and maintenance included",
     ],
   },
 ];
 
-const reasons = [
-  "End-to-end delivery — design, dev, deploy, support",
-  "Transparent pricing with no surprise costs",
-  "Dedicated team for every project",
-  "Modern tech stack, battle-tested architecture",
-  "Agile team that ships on time, every time",
-  "Post-launch support & maintenance included",
-];
 
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={getWebPageSchema(
+          "/",
+          "Zenqbit — Custom Software, AI & IoT Solutions",
+          "Zenqbit builds custom software, AI solutions, IoT systems, mobile apps, and automation for startups and enterprises in Malaysia and Bangladesh.",
+        )}
+      />
+
+      <h1 className="sr-only">
+        Zenqbit — Custom Software, AI &amp; IoT Solutions in Malaysia and Bangladesh
+      </h1>
+
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-muted/30 pb-40 lg:pb-52">
         {/* Background image — dotted hands artwork */}
@@ -202,7 +204,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-2 overflow-hidden rounded-2xl lg:block">
-                <Image src="/service-1.png" alt="Staff Augmentation" width={600} height={400} className="h-full w-full object-cover" />
+                <Image src="/service-1.png" alt="Custom software development team at work" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-3">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -221,7 +223,7 @@ export default function Home() {
             {/* ── Row 2: Image | Text | Image ── */}
             <div className="grid gap-8 lg:grid-cols-[1fr_1.35fr_1fr]">
               <div className="hidden animate-fade-up delay-1 overflow-hidden rounded-2xl lg:block">
-                <Image src="/service-2.png" alt="MVP Development" width={600} height={400} className="h-full w-full object-cover" />
+                <Image src="/service-2.png" alt="Rapid MVP prototyping process" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-2 px-0 lg:px-8">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -236,7 +238,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-3 overflow-hidden rounded-2xl lg:block">
-                <Image src="/service-3.png" alt="MVP Development" width={600} height={400} className="h-full w-full object-cover" />
+                <Image src="/service-3.png" alt="Agile development sprint board" width={600} height={400} className="h-full w-full object-cover" />
               </div>
             </div>
 
@@ -255,7 +257,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="hidden animate-fade-up delay-2 overflow-hidden rounded-2xl lg:block">
-                <Image src="/service-4.png" alt="Technology Consulting" width={600} height={400} className="h-full w-full object-cover" />
+                <Image src="/service-4.png" alt="Technology consulting and architecture planning" width={600} height={400} className="h-full w-full object-cover" />
               </div>
               <div className="animate-fade-up delay-3">
                 <div className="mb-6 flex size-11 items-center justify-center rounded-xl bg-brand-coral/10">
@@ -299,7 +301,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              From staff augmentation to full digital transformation — we cover
+              From custom development to full digital transformation — we cover
               every stage of your product journey.
             </p>
           </div>
@@ -459,24 +461,24 @@ export default function Home() {
               <div className="space-y-8">
                 {[
                   {
-                    value: "70%",
-                    label: "Intelligent Coding",
-                    desc: "AI-assisted code generation reducing development time and boosting consistency across projects.",
+                    value: "98%",
+                    label: "Client Retention",
+                    desc: "Our clients stay because we deliver. Transparent communication and consistent results build lasting partnerships.",
                   },
                   {
-                    value: "99.9%",
-                    label: "Bulletproof QA",
-                    desc: "Automated testing pipelines ensuring near-perfect reliability before every deployment.",
+                    value: "6+",
+                    label: "Service Domains",
+                    desc: "Web, AI, IoT, mobile, automation, and consulting — full-stack expertise across every major technology stack.",
                   },
                   {
-                    value: "40%",
-                    label: "Peak Performance",
-                    desc: "Optimized architecture delivering faster load times and lower infrastructure costs.",
+                    value: "8+",
+                    label: "Industry Verticals",
+                    desc: "Deep domain knowledge across fintech, edtech, e-commerce, healthcare, telecom, retail, and more.",
                   },
                   {
-                    value: "90%",
-                    label: "Zero-Downtime DevOps",
-                    desc: "CI/CD pipelines with rolling deployments, auto-scaling, and real-time monitoring.",
+                    value: "24/7",
+                    label: "Support Coverage",
+                    desc: "Two offices across Asia ensure round-the-clock availability for critical deployments and urgent fixes.",
                   },
                 ].map((metric) => (
                   <div key={metric.label} className="group/metric">
@@ -507,10 +509,10 @@ export default function Home() {
             {/* Left — 10X stat */}
             <div className="flex items-start gap-4 border-l-2 border-brand-coral pl-5">
               <div>
-                <h3 className="text-xl font-bold">10X Faster Delivery</h3>
+                <h3 className="text-xl font-bold">Ship Faster, Ship Better</h3>
                 <p className="mt-1 max-w-xs text-[13px] leading-relaxed text-muted-foreground">
-                  Our world-class engineers leverage cutting-edge AI to deliver
-                  solutions 10X faster without compromising quality.
+                  AI-assisted development combined with battle-tested engineering
+                  practices — delivering reliable software on time, every sprint.
                 </p>
               </div>
             </div>
@@ -527,7 +529,7 @@ export default function Home() {
                 <div className="flex size-10 items-center justify-center rounded-full bg-brand-teal/10">
                   <CheckCircle2 className="size-5 text-brand-teal" />
                 </div>
-                <span className="text-sm font-semibold">Top 1% Talent</span>
+                <span className="text-sm font-semibold">Vetted Engineers</span>
               </div>
             </div>
           </div>
@@ -543,7 +545,7 @@ export default function Home() {
             <span className="text-brand-coral">Yes!</span> We cover your tech stack.
           </h2>
           <p className="animate-fade-up delay-1 mx-auto mt-3 max-w-md text-sm text-white/50">
-            Our 50+ team has expertise in almost every programming language.
+            Our team has expertise in almost every programming language.
           </p>
         </div>
 
@@ -658,26 +660,24 @@ export default function Home() {
               <div className="p-8">
                 <h3 className="text-xl font-bold">Bangladesh</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  8th Floor, 2 Bir Uttam AK Khandakar Road,
-                  <br />
-                  Mohakhali C/A, Dhaka 1212, Bangladesh
+                  Dhaka, Bangladesh
                 </p>
                 <div className="mt-4 space-y-1.5">
                   <Link
-                    href="mailto:sales@zenqbit.com"
+                    href="mailto:hello@zenqbit.com"
                     className="block text-sm text-brand-coral hover:underline"
                   >
-                    sales@zenqbit.com
+                    hello@zenqbit.com
                   </Link>
                   <Link
-                    href="tel:+8809610902323"
+                    href="tel:+8801805650587"
                     className="block text-sm text-brand-teal hover:underline"
                   >
-                    +880 9610-902323
+                    +880 1805-650587
                   </Link>
                 </div>
               </div>
-              <Image src="/office-bangladesh.svg" alt="Bangladesh" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
+              <Image src="/office-bangladesh.svg" alt="Zenqbit Dhaka, Bangladesh office" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
             </div>
 
             {/* Malaysia */}
@@ -685,26 +685,24 @@ export default function Home() {
               <div className="p-8">
                 <h3 className="text-xl font-bold">Malaysia</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Level 8, Pavilion KL,
-                  <br />
-                  168 Jalan Bukit Bintang, 55100 Kuala Lumpur
+                  Cyberjaya, Selangor 63000, Malaysia
                 </p>
                 <div className="mt-4 space-y-1.5">
                   <Link
-                    href="mailto:sales@zenqbit.com"
+                    href="mailto:hello@zenqbit.com"
                     className="block text-sm text-brand-coral hover:underline"
                   >
-                    sales@zenqbit.com
+                    hello@zenqbit.com
                   </Link>
                   <Link
-                    href="tel:+60123456789"
+                    href="tel:+601168295384"
                     className="block text-sm text-brand-teal hover:underline"
                   >
-                    +60 12-345 6789
+                    +60 11-6829 5384
                   </Link>
                 </div>
               </div>
-              <Image src="/office-malaysia.svg" alt="Malaysia" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
+              <Image src="/office-malaysia.svg" alt="Zenqbit Cyberjaya, Malaysia office" width={160} height={160} className="hidden h-full w-40 object-contain pr-4 sm:block" />
             </div>
           </div>
         </div>

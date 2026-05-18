@@ -46,7 +46,7 @@ export const industries: Industry[] = [
     slug: "edtech",
     tagline: "Empowering learners worldwide",
     description:
-      "We build learning management systems, virtual classrooms, and assessment platforms that scale from hundreds to millions of learners. Our EdTech solutions integrate with Moodle, support live classes, automated grading, and compliance reporting — giving educators the tools to focus on teaching, not technology.",
+      "We build learning management systems, virtual classrooms, and assessment platforms that scale from hundreds to millions of learners across Southeast Asia and beyond. Our EdTech solutions integrate with Moodle, support live classes, automated grading, and compliance reporting — giving educators the tools to focus on teaching, not technology.",
     tags: ["LMS", "Moodle", "Live Classes", "Assessments", "Compliance"],
     color: "#d6e8f5",
     tagColor: "#bcd8ee",
@@ -123,7 +123,7 @@ export const industries: Industry[] = [
     slug: "fintech",
     tagline: "Secure, scalable financial platforms",
     description:
-      "We build secure, regulation-compliant fintech platforms — from payment gateways and lending systems to blockchain solutions and KYC/AML workflows. Our financial software is built with security-first architecture, real-time processing, and audit trails that satisfy regulators.",
+      "We build secure, regulation-compliant fintech platforms for businesses in Malaysia, Bangladesh, and across Asia. From payment gateways and lending systems to blockchain solutions and KYC/AML workflows — our financial software is built with security-first architecture, real-time processing, and audit trails that satisfy regulators.",
     tags: ["Payments", "Blockchain", "Lending", "KYC", "Risk Management"],
     color: "#e8cdb5",
     tagColor: "#d9b99a",
@@ -200,7 +200,7 @@ export const industries: Industry[] = [
     slug: "e-commerce",
     tagline: "Stores that convert and scale",
     description:
-      "We transform online retail with certified Shopify, Magento, and WooCommerce solutions — plus fully custom storefronts for brands that need complete control. From custom themes and plugins to conversion optimization and analytics, we build stores that sell.",
+      "We transform online retail with Shopify, Magento, and WooCommerce solutions — plus fully custom storefronts for brands that need complete control. From custom themes and plugins to conversion optimization and analytics, we build e-commerce stores for businesses in Malaysia, South Asia, and globally that convert and scale.",
     tags: ["Shopify", "Magento", "WooCommerce", "Headless", "Marketplaces"],
     color: "#d4c8e8",
     tagColor: "#c0b0d8",
@@ -277,7 +277,7 @@ export const industries: Industry[] = [
     slug: "pharma-healthcare",
     tagline: "Regulation-first health technology",
     description:
-      "We build HIPAA-compliant healthcare software — from EHR integrations and telemedicine platforms to e-prescribing systems and clinical analytics. Our solutions prioritize patient safety, data security, and regulatory compliance at every layer.",
+      "We build compliant healthcare software for pharma companies, hospitals, and healthtech startups in Malaysia, Bangladesh, and beyond. From EHR integrations and telemedicine platforms to e-prescribing systems and clinical analytics — our solutions prioritize patient safety, data security, and regulatory compliance at every layer.",
     tags: ["HIPAA", "e-Prescripts", "Telemedicine", "EHR", "Compliance"],
     color: "#b5d9cc",
     tagColor: "#97c9bb",
@@ -354,7 +354,7 @@ export const industries: Industry[] = [
     slug: "telecom",
     tagline: "Enterprise-grade connectivity solutions",
     description:
-      "We build enterprise-grade telecom applications that scale to serve millions — VoIP platforms, network management systems, billing engines, and IoT connectivity solutions. Our telecom software handles the throughput, reliability, and uptime that the industry demands.",
+      "We build enterprise-grade telecom applications that scale to serve millions of subscribers across Asia. VoIP platforms, network management systems, billing engines, and IoT connectivity solutions — our telecom software handles the throughput, reliability, and uptime that operators in Malaysia, Bangladesh, and the wider region demand.",
     tags: ["VoIP", "Network Management", "Billing", "IoT", "5G"],
     color: "#d6e8f5",
     tagColor: "#bcd8ee",
@@ -431,7 +431,7 @@ export const industries: Industry[] = [
     slug: "retail",
     tagline: "Smart systems for modern retail",
     description:
-      "We build smart retail systems that streamline inventory, enhance customer journeys, and optimize promotions. From POS systems and loyalty programs to supply chain visibility and omnichannel experiences — we help retailers compete in a digital-first world.",
+      "We build smart retail systems that streamline inventory, enhance customer journeys, and optimize promotions for retailers in Malaysia, Bangladesh, and Southeast Asia. From POS systems and loyalty programs to supply chain visibility and omnichannel experiences — we help retailers compete in a digital-first world.",
     tags: ["POS", "Inventory", "CRM", "Loyalty", "Omnichannel"],
     color: "#e8cdb5",
     tagColor: "#d9b99a",
@@ -508,7 +508,7 @@ export const industries: Industry[] = [
     slug: "software-ites",
     tagline: "Custom software for complex problems",
     description:
-      "We build custom enterprise software and IT-enabled services — SaaS platforms, internal tools, API ecosystems, and cloud-native applications. From legacy modernization to greenfield builds, we solve complex technical problems with clean, scalable architecture.",
+      "We build custom enterprise software and IT-enabled services for companies in Malaysia, Bangladesh, and globally. SaaS platforms, internal tools, API ecosystems, and cloud-native applications — from legacy modernization to greenfield builds, our engineers solve complex technical problems with clean, scalable architecture.",
     tags: ["SaaS", "Enterprise", "Cloud", "API", "Microservices"],
     color: "#d4c8e8",
     tagColor: "#c0b0d8",
@@ -581,11 +581,11 @@ export const industries: Industry[] = [
   },
   {
     icon: Rocket,
-    name: "Start-Ups",
+    name: "Startups",
     slug: "startups",
     tagline: "From zero to product-market fit",
     description:
-      "We help startups move fast without breaking things. Lean MVPs in 8–12 weeks, scalable architecture from day one, and the engineering discipline to iterate quickly toward product-market fit. We've helped teams from pre-seed to Series B build products that users love.",
+      "We help startups in Malaysia, Bangladesh, and across Asia move fast without breaking things. Lean MVPs in 8–12 weeks, scalable architecture from day one, and the engineering discipline to iterate quickly toward product-market fit. With competitive rates from our Cyberjaya and Dhaka offices, we give early-stage teams enterprise-quality engineering at startup-friendly budgets.",
     tags: ["MVP", "Product-Market Fit", "Rapid Iteration", "Scalable"],
     color: "#b5d9cc",
     tagColor: "#97c9bb",

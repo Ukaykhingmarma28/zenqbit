@@ -36,7 +36,7 @@ Multi-stage Dockerfile using Node 20 Alpine. Requires `output: "standalone"` in 
 - **Next.js 16.2.3** (App Router) with **React 19.2.4**
 - **TypeScript** (strict mode, bundler module resolution)
 - **Tailwind CSS v4** via `@tailwindcss/postcss` — uses `@import "tailwindcss"` and `@theme inline` syntax in `app/globals.css`. There is no `tailwind.config.js`.
-- **shadcn/ui** (style: `base-nova`, RSC-enabled) — components in `components/ui/`, configured via `components.json`. Install via `npx shadcn@latest add <component>`.
+- **shadcn/ui** (style: `base-nova`, RSC-enabled, backed by `@base-ui/react`) — components in `components/ui/`, configured via `components.json`. Install via `npx shadcn@latest add <component>`.
 - **Embla Carousel** with autoplay plugin
 - **Lucide React** for icons — lucide-react has no social media brand icons; use inline SVGs for Facebook, LinkedIn, Twitter, YouTube etc.
 - **Fonts**: Uncut Sans (local, `--font-sans`, weights 400–700) as primary; Geist Mono (Google, `--font-geist-mono`) as monospace
@@ -52,8 +52,9 @@ All routes live under `app/`. Pages are Server Components by default.
 | `/` | Homepage (`app/page.tsx`) — hero, services, industries, process, tech stack, dev excellence, global offices |
 | `/about`, `/blog`, `/careers`, `/contact`, `/work` | Static pages |
 | `/services/[slug]` | Dynamic service detail pages, statically generated via `generateStaticParams()` from `lib/services.ts` |
+| `/industries/[slug]` | Dynamic industry detail pages, statically generated via `generateStaticParams()` from `lib/industries.ts` |
 
-`app/layout.tsx` renders a shared `<Navbar />` and `<Footer />` wrapping all pages. The CTA section is embedded inside the Footer component, not on individual pages.
+`app/layout.tsx` renders a shared `<Navbar />` and `<Footer />` wrapping all pages. The Footer component includes a CTA block. Some detail pages (e.g., industries) also render their own inline CTA sections.
 
 ### Components
 
@@ -61,19 +62,30 @@ All routes live under `app/`. Pages are Server Components by default.
 - `components/navbar.tsx` — client component, site navigation
 - `components/footer.tsx` — server component, includes CTA block + 6-column footer with inline SVG social icons
 - `components/hero-slider.tsx` — client component, homepage hero carousel
+- `components/lazy-hero-slider.tsx` — client component, dynamic import wrapper for hero-slider (SSR disabled, shows skeleton while loading)
 - `components/hero-flow/` — client component, animated flow canvas for the hero section (has its own engine, types, and icons)
 - `components/features-showcase.tsx` — server component, homepage feature cards
+- `components/schedule-form.tsx` — client component, multi-step scheduling form (service → industry → date/time → contact details)
 
 ### Data
 
-- `lib/services.ts` — service definitions (slug, title, description, features) used by both the homepage and `/services/[slug]` pages
+- `lib/services.ts` — service definitions (slug, title, description, features, process, use cases, FAQs) used by both the homepage and `/services/[slug]` pages
+- `lib/industries.ts` — industry definitions (slug, name, tagline, features, use cases, FAQs, brand color) used by the homepage and `/industries/[slug]` pages
 - `lib/utils.ts` — `cn()` helper (clsx + tailwind-merge)
 
 ### Static Assets
 
 - `public/` — images organized by concern: `services/`, `industries/`, `tech/` subdirectories, plus office SVG illustrations
 - `app/fonts/` — local Uncut Sans woff2 files
-- Remote images allowed from `i.pravatar.cc` and `picsum.photos` (configured in `next.config.ts`)
+
+### Brand Palette & Animations
+
+The brand color palette is defined in `globals.css` under `@theme inline`:
+- `brand-coral` (#F0544F) — primary accent, used for CTAs, highlights, and section labels
+- `brand-green` (#355146), `brand-blue` (#7296C0), `brand-teal` (#11769A) — secondary colors
+- `brand-dark` (#141414), `brand-white` (#FFFFFF) — base colors
+
+Custom entrance animation classes are defined in `globals.css`: `animate-fade-in`, `animate-fade-up`, `animate-fade-down`, `animate-scale-in`, `animate-slide-in-right`, `animate-slide-in-left`. Stagger with `delay-1` through `delay-5` (80ms increments). All respect `prefers-reduced-motion`.
 
 ## Key Conventions
 

@@ -28,16 +28,16 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    headline: "Scale Your Dev Team With Top 1% Bangladeshi Talents in 4 Weeks",
+    headline: "Custom Software, AI & IoT Solutions — Built to Scale Your Business",
     subtext:
-      "From startups to enterprises—build scalable, secure software with our 18+ years of expertise and ISO 27001-certified teams.",
-    ctaLabel: "Hire Your Team Now",
+      "From startups to enterprises — our skilled engineers in Malaysia and Bangladesh build scalable, secure software that drives real results.",
+    ctaLabel: "Schedule a Free Consultation",
     ctaHref: "/contact",
     stats: [
       {
         image: "/avatars/12.jpg",
-        value: "18+",
-        label: "Years of Experience",
+        value: "6+",
+        label: "Service Domains",
       },
       {
         image: "/avatars/25.jpg",
@@ -47,16 +47,16 @@ const slides: Slide[] = [
     ],
   },
   {
-    headline: "Build AI-Powered, Scalable Software for Startups to Enterprises.",
+    headline: "End-to-End IoT Systems — From Sensors to Dashboards",
     subtext:
-      "From fintech to eCommerce, we deliver end-to-end solutions tailored to your business—fast, flexible, and reliable.",
-    ctaLabel: "Schedule a Call",
-    ctaHref: "/contact",
+      "Working with experienced R&D partners, we turn innovative IoT ideas into practical, real-world technology — custom hardware, firmware, and cloud platforms.",
+    ctaLabel: "Explore IoT Solutions",
+    ctaHref: "/services/iot-solutions",
     stats: [
       {
         image: "/avatars/32.jpg",
-        value: "15+",
-        label: "Projects Delivered",
+        value: "8+",
+        label: "Industry Verticals",
       },
       {
         image: "/avatars/47.jpg",

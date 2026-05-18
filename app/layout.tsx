@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { JsonLd } from "@/components/json-ld";
+import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schemas";
 import "./globals.css";
 
 const uncutSans = localFont({
@@ -22,9 +24,71 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zenqbit — Software Solutions",
+  metadataBase: new URL("https://zenqbit.com"),
+  title: {
+    default: "Zenqbit — Custom Software, AI & IoT Solutions",
+    template: "%s | Zenqbit",
+  },
   description:
-    "Web development, mobile apps, AI, IoT, and automation solutions for modern businesses.",
+    "Zenqbit builds custom software, AI, IoT, and mobile apps for startups and enterprises. Skilled engineers in Malaysia and Bangladesh.",
+  keywords: [
+    "software development company",
+    "custom software Malaysia",
+    "AI solutions Bangladesh",
+    "IoT solutions",
+    "mobile app development",
+    "web development",
+    "technology consulting",
+    "software company Cyberjaya",
+    "IT outsourcing Bangladesh",
+  ],
+  authors: [{ name: "Zenqbit", url: "https://zenqbit.com" }],
+  creator: "Zenqbit",
+  publisher: "Zenqbit",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://zenqbit.com",
+    siteName: "Zenqbit",
+    title: "Zenqbit — Custom Software, AI & IoT Solutions",
+    description:
+      "Custom software, AI, IoT, mobile apps, and automation. Skilled engineers serving Malaysia, Bangladesh, and global clients.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Zenqbit — Technology Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/opengraph-image"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+  },
+  manifest: "/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://zenqbit.com",
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +103,10 @@ export default function RootLayout({
       className={`${uncutSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">
+        {/* TODO: Add analytics before launch — Google Analytics, Vercel Analytics, or similar */}
+        {/* Example: <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" /> */}
+        <JsonLd data={getOrganizationSchema()} />
+        <JsonLd data={getWebSiteSchema()} />
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />

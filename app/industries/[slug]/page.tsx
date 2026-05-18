@@ -18,10 +18,23 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { industries, getIndustryBySlug } from "@/lib/industries";
 import { services } from "@/lib/services";
+import { JsonLd } from "@/components/json-ld";
+import {
+  getWebPageSchema,
+  getFaqSchema,
+  getBreadcrumbSchema,
+} from "@/lib/schemas";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return industries.map((ind) => ({ slug: ind.slug }));
+}
+
+function truncateDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const truncated = text.slice(0, max);
+  const lastSpace = truncated.lastIndexOf(" ");
+  return (lastSpace > 80 ? truncated.slice(0, lastSpace) : truncated) + "…";
 }
 
 export async function generateMetadata({
@@ -32,9 +45,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
   if (!industry) return {};
+  const shortDesc = truncateDescription(industry.description);
   return {
-    title: `${industry.name} Solutions — Zenqbit`,
-    description: industry.description,
+    title: `${industry.name} Solutions`,
+    description: shortDesc,
+    alternates: { canonical: `/industries/${slug}` },
+    openGraph: {
+      title: `${industry.name} Solutions — Zenqbit`,
+      description: shortDesc,
+      url: `/industries/${slug}`,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Zenqbit — Technology Solutions" }],
+    },
   };
 }
 
@@ -51,6 +72,22 @@ export default async function IndustryPage({
 
   return (
     <>
+      <JsonLd
+        data={getWebPageSchema(
+          `/industries/${slug}`,
+          `${industry.name} Solutions`,
+          industry.description,
+        )}
+      />
+      <JsonLd data={getFaqSchema(industry.faqs)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", url: "https://zenqbit.com" },
+          { name: "Industries", url: "https://zenqbit.com/#industries" },
+          { name: industry.name, url: `https://zenqbit.com/industries/${slug}` },
+        ])}
+      />
+
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]" />
@@ -65,7 +102,7 @@ export default async function IndustryPage({
             All Industries
           </Link>
 
-          <div className="flex items-start gap-5">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
             <div
               className="flex size-14 shrink-0 items-center justify-center rounded-xl"
               style={{ backgroundColor: `${industry.color}` }}
@@ -93,7 +130,7 @@ export default async function IndustryPage({
                   </Badge>
                 ))}
               </div>
-              <div className="mt-8 flex gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <Link
                   href="/contact"
                   className={cn(
@@ -179,10 +216,11 @@ export default async function IndustryPage({
                     {useCase.description}
                   </p>
                 </div>
-                <div className="flex items-center justify-between px-6 py-4">
-                  <span className="text-sm font-bold">View Details</span>
-                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover:bg-brand-dark dark:bg-muted dark:group-hover:bg-foreground">
-                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover:text-white dark:text-foreground/70 dark:group-hover:text-brand-dark" />
+                <div className="px-6 py-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="rounded-full bg-brand-coral/10 px-3 py-1 text-xs font-medium text-brand-coral">
+                      {industry.name}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -284,7 +322,7 @@ export default async function IndustryPage({
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {otherIndustries.map((ind) => (
+            {otherIndustries.slice(0, 4).map((ind) => (
               <Link
                 key={ind.slug}
                 href={`/industries/${ind.slug}`}

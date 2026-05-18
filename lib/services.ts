@@ -50,7 +50,7 @@ export const services: Service[] = [
       "Custom websites and web apps built for speed, SEO, and conversions — from landing pages to full-scale platforms.",
     tags: ["React", "Next.js", "WordPress", "Shopify"],
     longDescription:
-      "We craft high-performance websites across every major platform. Whether you need a content-driven WordPress site, a conversion-focused Shopify store, or a fully custom solution with React and Next.js — we deliver pixel-perfect results that load fast and rank well.",
+      "We craft high-performance websites across every major platform. Whether you need a content-driven WordPress site, a conversion-focused Shopify store, or a fully custom solution with React and Next.js — our team in Malaysia and Bangladesh delivers pixel-perfect results that load fast and rank well. With a team of skilled engineers and access to a vetted network of specialists, we scale to match your project needs.",
     features: [
       {
         title: "Custom Web Applications",
@@ -153,7 +153,7 @@ export const services: Service[] = [
       "Native and cross-platform apps for iOS and Android that your users will love — fast, smooth, and reliable.",
     tags: ["iOS", "Android", "React Native", "Flutter"],
     longDescription:
-      "From concept to App Store, we build mobile applications that feel native and perform beautifully. We work with React Native and Flutter for cross-platform efficiency, or go fully native when performance demands it.",
+      "From concept to App Store, we build mobile applications that feel native and perform beautifully. Our engineering teams in Cyberjaya and Dhaka work with React Native and Flutter for cross-platform efficiency, or go fully native when performance demands it. We understand the Southeast Asian and South Asian mobile landscape — high mobile penetration, diverse devices, and connectivity constraints.",
     features: [
       {
         title: "Cross-Platform Development",
@@ -256,7 +256,7 @@ export const services: Service[] = [
       "From chatbots to predictive analytics — we integrate AI to automate decisions and unlock insights.",
     tags: ["LLMs", "Computer Vision", "NLP", "ML Pipelines"],
     longDescription:
-      "We help businesses harness AI practically — not as a buzzword, but as a real competitive advantage. From LLM-powered chatbots and document processing to computer vision and predictive analytics, we build AI systems that deliver measurable ROI.",
+      "We help businesses across Malaysia, Bangladesh, and beyond harness AI practically — not as a buzzword, but as a real competitive advantage. From LLM-powered chatbots and document processing to computer vision and predictive analytics, we build AI systems that deliver measurable ROI. Our team integrates AI thoughtfully into your product, shipping measurable impact rather than science projects.",
     features: [
       {
         title: "LLM Integration & Fine-Tuning",
@@ -359,7 +359,7 @@ export const services: Service[] = [
       "Connect devices, collect data, and control systems remotely with our end-to-end IoT platforms.",
     tags: ["Sensors", "Edge Computing", "Dashboards", "MQTT"],
     longDescription:
-      "We design and deploy IoT systems that connect the physical and digital worlds. From sensor selection and edge computing to real-time dashboards and alerting — we build the full stack.",
+      "We design and deploy end-to-end IoT systems that connect the physical and digital worlds. Working with experienced R&D partners, we turn innovative IoT ideas into practical, real-world technology — custom hardware, firmware, and cloud platforms. From sensor selection and edge computing to real-time dashboards and alerting, our team builds the full stack with hands-on hardware engineering expertise.",
     features: [
       {
         title: "Device Integration & Protocols",
@@ -435,7 +435,7 @@ export const services: Service[] = [
       {
         question: "Do you provide the hardware or just the software?",
         answer:
-          "We're primarily a software company, but we have hardware partnerships and can recommend and source sensors, gateways, and edge devices. We handle the full integration — from hardware to cloud to dashboard.",
+          "We cover both. Our team includes engineers with deep R&D experience in hardware prototyping, firmware development, and Linux kernel customization. We also partner with component suppliers to source sensors, gateways, and edge devices. We handle the full integration — from hardware to cloud to dashboard.",
       },
       {
         question: "How do you handle IoT security?",
@@ -462,7 +462,7 @@ export const services: Service[] = [
       "Eliminate repetitive tasks and streamline operations with intelligent workflow automation.",
     tags: ["RPA", "Workflow", "Integration", "CI/CD"],
     longDescription:
-      "We identify bottlenecks in your operations and automate them away. From RPA bots that handle data entry to end-to-end workflow orchestration — we build automation that saves hours every week.",
+      "We identify bottlenecks in your operations and automate them away. From RPA bots that handle data entry to end-to-end workflow orchestration, our teams in Malaysia and Bangladesh build automation solutions that save hours every week and scale with your business.",
     features: [
       {
         title: "Robotic Process Automation",
@@ -565,7 +565,7 @@ export const services: Service[] = [
       "Strategic technology consulting to align your tools with business goals — audits, roadmaps, and architecture.",
     tags: ["Tech Audits", "Architecture", "Strategy", "Digital Transformation"],
     longDescription:
-      "Cut tech waste with our strategic audits. We assess your current stack, identify inefficiencies, and design a roadmap that aligns your technology investments with your business goals for maximum ROI.",
+      "Cut tech waste with our strategic audits. Based in Cyberjaya, Malaysia with engineering in Dhaka, Bangladesh, we assess your current stack, identify inefficiencies, and design a roadmap that aligns your technology investments with your business goals. We follow world-recognized standards like ISO 27001, OWASP, and WCAG — bringing enterprise-grade discipline to businesses of every size.",
     features: [
       {
         title: "Technology Audits",

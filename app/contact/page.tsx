@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import { ScheduleForm } from "@/components/schedule-form";
+import { JsonLd } from "@/components/json-ld";
+import { getContactPageSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  title: "Schedule a Call — Zenqbit",
+  title: "Contact Us — Free Consultation",
   description:
-    "Book a free 30-minute consultation with Zenqbit. Select your service, industry, and preferred time.",
+    "Get in touch with Zenqbit. Book a free consultation for custom software, AI, IoT, or mobile app development. Offices in Malaysia and Bangladesh.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Zenqbit — Free Consultation",
+    description:
+      "Book a free 30-minute consultation for custom software, AI, IoT, and mobile app development.",
+    url: "/contact",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Zenqbit — Technology Solutions" }],
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={getContactPageSchema()} />
+
       {/* Hero */}
       <section className="relative overflow-hidden border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]" />
@@ -42,9 +53,14 @@ export default function ContactPage() {
       {/* Contact Info */}
       <section className="border-t bg-muted/30 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-10 text-center text-2xl font-bold tracking-tight">
+          <h2 className="mb-4 text-center text-2xl font-bold tracking-tight">
             Other Ways to Reach Us
           </h2>
+          <p className="mx-auto mb-10 max-w-2xl text-center text-[15px] leading-relaxed text-muted-foreground">
+            Prefer to reach out directly? Our team is available Monday through
+            Friday, 9 AM to 6 PM in both Malaysian (MYT) and Bangladesh (BST)
+            time zones. We respond to all inquiries within 24 hours.
+          </p>
 
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="flex flex-col items-center rounded-xl border border-border/50 bg-card px-6 py-8 text-center">
@@ -53,13 +69,13 @@ export default function ContactPage() {
               </div>
               <h3 className="mt-4 font-semibold">Email</h3>
               <Link
-                href="mailto:sales@zenqbit.com"
+                href="mailto:hello@zenqbit.com"
                 className="mt-2 text-sm text-brand-coral hover:underline"
               >
-                sales@zenqbit.com
+                hello@zenqbit.com
               </Link>
               <p className="mt-1 text-xs text-muted-foreground">
-                We reply within 24 hours
+                General inquiries, project requests, and partnerships
               </p>
             </div>
 
@@ -69,13 +85,19 @@ export default function ContactPage() {
               </div>
               <h3 className="mt-4 font-semibold">Phone</h3>
               <Link
-                href="tel:+8809610902323"
+                href="tel:+601168295384"
                 className="mt-2 text-sm text-brand-coral hover:underline"
               >
-                +880 9610-902323
+                +60 11-6829 5384
+              </Link>
+              <Link
+                href="tel:+8801805650587"
+                className="mt-1 text-sm text-brand-coral hover:underline"
+              >
+                +880 1805-650587
               </Link>
               <p className="mt-1 text-xs text-muted-foreground">
-                Mon–Fri, 9 AM – 6 PM BST
+                Mon–Fri, 9 AM – 6 PM (MYT / BST)
               </p>
             </div>
 
@@ -84,11 +106,45 @@ export default function ContactPage() {
                 <MapPin className="size-5 text-brand-coral" />
               </div>
               <h3 className="mt-4 font-semibold">Offices</h3>
-              <p className="mt-2 text-sm">Dhaka &middot; Kuala Lumpur</p>
+              <p className="mt-2 text-sm">Cyberjaya, Malaysia</p>
+              <p className="text-sm">Dhaka, Bangladesh</p>
               <p className="mt-1 text-xs text-muted-foreground">
-                Two offices across Asia
+                Headquarters and engineering center across Asia
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Happens Next */}
+      <section className="border-t py-16 lg:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center text-2xl font-bold tracking-tight sm:text-3xl">
+            What Happens After You Reach Out
+          </h2>
+          <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
+            <p>
+              Once you submit your consultation request, a project manager from
+              our team will reach out within 24 hours to schedule a free
+              30-minute discovery call. During this call, we&apos;ll discuss
+              your business goals, technical requirements, timeline
+              expectations, and budget considerations.
+            </p>
+            <p>
+              After the discovery call, our engineering team prepares a detailed
+              proposal including architecture recommendations, technology stack
+              suggestions, team composition, and a phased delivery timeline.
+              We&apos;ll walk you through the proposal in a follow-up session
+              and answer any questions before you decide to move forward.
+            </p>
+            <p>
+              We work with startups validating their first product, SMEs
+              modernizing legacy systems, and enterprises scaling their
+              technology infrastructure. No matter the project size, every
+              engagement gets the same level of technical rigour and dedicated
+              attention from our engineering team across Malaysia and
+              Bangladesh.
+            </p>
           </div>
         </div>
       </section>

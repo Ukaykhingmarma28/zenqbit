@@ -99,6 +99,8 @@ export function ScheduleForm() {
   };
 
   const handleSubmit = () => {
+    // TODO: Connect to backend before launch — send form data to API route, email service, or CRM
+    // Example: await fetch("/api/schedule", { method: "POST", body: JSON.stringify({ selectedService, selectedIndustry, selectedDate, selectedTime, ...formData }) })
     setSubmitted(true);
   };
 

@@ -17,10 +17,23 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { services, getServiceBySlug } from "@/lib/services";
+import { JsonLd } from "@/components/json-ld";
+import {
+  getServiceSchema,
+  getFaqSchema,
+  getBreadcrumbSchema,
+} from "@/lib/schemas";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
+}
+
+function truncateDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const truncated = text.slice(0, max);
+  const lastSpace = truncated.lastIndexOf(" ");
+  return (lastSpace > 80 ? truncated.slice(0, lastSpace) : truncated) + "…";
 }
 
 export async function generateMetadata({
@@ -31,9 +44,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = getServiceBySlug(slug);
   if (!service) return {};
+  const shortDesc = truncateDescription(service.description);
   return {
-    title: `${service.title} — Zenqbit`,
-    description: service.description,
+    title: `${service.title} Services`,
+    description: shortDesc,
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: {
+      title: `${service.title} — Zenqbit`,
+      description: shortDesc,
+      url: `/services/${slug}`,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Zenqbit — Technology Solutions" }],
+    },
   };
 }
 
@@ -50,6 +71,16 @@ export default async function ServicePage({
 
   return (
     <>
+      <JsonLd data={getServiceSchema(service)} />
+      <JsonLd data={getFaqSchema(service.faqs)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", url: "https://zenqbit.com" },
+          { name: "Services", url: "https://zenqbit.com/#our-services" },
+          { name: service.title, url: `https://zenqbit.com/services/${slug}` },
+        ])}
+      />
+
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]" />
@@ -64,7 +95,7 @@ export default async function ServicePage({
             All Services
           </Link>
 
-          <div className="flex items-start gap-5">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
             <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-brand-coral/10">
               <service.icon className="size-7 text-brand-coral" />
             </div>
@@ -82,7 +113,7 @@ export default async function ServicePage({
                   </Badge>
                 ))}
               </div>
-              <div className="mt-8 flex gap-4">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <Link
                   href="/contact"
                   className={cn(
@@ -206,10 +237,11 @@ export default async function ServicePage({
                     {useCase.description}
                   </p>
                 </div>
-                <div className="flex items-center justify-between px-6 py-4">
-                  <span className="text-sm font-bold">Learn More</span>
-                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover:bg-brand-dark dark:bg-muted dark:group-hover:bg-foreground">
-                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover:text-white dark:text-foreground/70 dark:group-hover:text-brand-dark" />
+                <div className="px-6 py-4">
+                  <div className="flex flex-wrap gap-1.5">
+                    <span className="rounded-full bg-brand-coral/10 px-3 py-1 text-xs font-medium text-brand-coral">
+                      {useCase.industry}
+                    </span>
                   </div>
                 </div>
               </div>
