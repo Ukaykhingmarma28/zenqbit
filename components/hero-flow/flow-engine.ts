@@ -433,6 +433,21 @@ export function createFlow(
       ctx!.stroke();
     });
 
+    // Particles along edges (drawn before pills/card so they pass underneath)
+    if (entranceT >= 0.7) {
+      const pAlpha = Math.min(1, (entranceT - 0.7) / 0.3);
+      ctx!.globalAlpha = pAlpha;
+      const speedScale = reducedMotion ? 0.5 : 1;
+      particles.forEach((p) => {
+        p.progress += dt * p.speed * speedScale;
+        if (p.progress > 1) {
+          p.progress -= 1 + p.delay * p.speed;
+        }
+        drawParticle(p);
+      });
+      ctx!.globalAlpha = 1;
+    }
+
     // Pills
     const pillAlpha = easeOutExpo(
       Math.max(0, Math.min(1, (entranceT - 0.35) / 0.3)),
@@ -450,21 +465,6 @@ export function createFlow(
     const bobY =
       entranceT >= 1 && !reducedMotion ? Math.sin(loopTime * 0.002) * 2 : 0;
     drawCenterCard(L.mx, L.my, L.cardW, L.cardH, cardAlpha, bobY);
-
-    // Particles along edges
-    if (entranceT >= 0.7) {
-      const pAlpha = Math.min(1, (entranceT - 0.7) / 0.3);
-      ctx!.globalAlpha = pAlpha;
-      const speedScale = reducedMotion ? 0.5 : 1;
-      particles.forEach((p) => {
-        p.progress += dt * p.speed * speedScale;
-        if (p.progress > 1) {
-          p.progress -= 1 + p.delay * p.speed;
-        }
-        drawParticle(p);
-      });
-      ctx!.globalAlpha = 1;
-    }
   }
 
   // Listeners
