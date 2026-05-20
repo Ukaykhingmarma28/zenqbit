@@ -40,6 +40,9 @@ yarn-error.log*
 # claude code
 .claude/
 
+# graphify local Python env (use: .venv-graphify/bin/graphify update .)
+/.venv-graphify/
+
 # debug scripts
 /scripts/
 

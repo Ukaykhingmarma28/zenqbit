@@ -1,0 +1,567 @@
+{
+  "/home/maklu/Codes/zen/eslint.config.mjs": {
+    "mtime": 1775791314.4192748,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/package.json": {
+    "mtime": 1779120655.5968542,
+    "ast_hash": "5da7cc45e1daa08ff8f977a7d1d0397a",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/next.config.ts": {
+    "mtime": 1777189601.720708,
+    "ast_hash": "24b5dd234ad38eb42778bed0765a8aec",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components.json": {
+    "mtime": 1775792222.4718049,
+    "ast_hash": "63b2c4fcf776fec9dbc76e94ea0d70c6",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/tsconfig.json": {
+    "mtime": 1775791314.4230626,
+    "ast_hash": "02fc19ad21338c2ab820a70136310db4",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/next-env.d.ts": {
+    "mtime": 1779120674.0589328,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/postcss.config.mjs": {
+    "mtime": 1775791314.4197035,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/page.tsx": {
+    "mtime": 1779120637.210776,
+    "ast_hash": "103e17590341a425acffe72901717033",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/opengraph-image.tsx": {
+    "mtime": 1779120454.8500028,
+    "ast_hash": "2c085a6fa55b9a55c94f8d7c30fe9efd",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/layout.tsx": {
+    "mtime": 1779120637.208776,
+    "ast_hash": "60e04d3c095a214cb9ef2b5627d5f3b0",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/sitemap.ts": {
+    "mtime": 1779120454.8510027,
+    "ast_hash": "5d10c318ec39c2ff90869d5a33745201",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/loading.tsx": {
+    "mtime": 1779120454.8500028,
+    "ast_hash": "9a31cfa5830e033c4ae6b283ba285898",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/robots.ts": {
+    "mtime": 1779120454.8510027,
+    "ast_hash": "cb81124e23d1340b09aa31ae635c5ba7",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/not-found.tsx": {
+    "mtime": 1779120454.8500028,
+    "ast_hash": "5cf6a65d305156b33bfbd472f6161cd2",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/services/[slug]/page.tsx": {
+    "mtime": 1779120637.220776,
+    "ast_hash": "6de74dd34233417d25d0bb96547e49b2",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/blog/page.tsx": {
+    "mtime": 1779120637.213776,
+    "ast_hash": "ebc96c1d00e43eb55e978be47e0aea27",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/contact/page.tsx": {
+    "mtime": 1779120637.2167761,
+    "ast_hash": "f291a7adb44ddf0cbf519ea831fc1270",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/industries/[slug]/page.tsx": {
+    "mtime": 1779120637.2217762,
+    "ast_hash": "419ff9e713fc4bbedfbabd97be691a82",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/about/page.tsx": {
+    "mtime": 1779120637.211776,
+    "ast_hash": "82068e800178fab1969b871fe5ab4705",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/careers/page.tsx": {
+    "mtime": 1779120637.2157762,
+    "ast_hash": "2b064195259b73d07a4d47e8ee1474c0",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/work/page.tsx": {
+    "mtime": 1779120637.2187762,
+    "ast_hash": "d5a51603b6b4cfadafd51300ad32f42d",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/numpy-config": {
+    "mtime": 1779184554.7540123,
+    "ast_hash": "b6e572d2ab0e33d42db0300f6db9022a",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/graphify": {
+    "mtime": 1779184565.9182217,
+    "ast_hash": "9f2d594d8b1125121cb814cea7dc4f62",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/Activate.ps1": {
+    "mtime": 1779184532.4446678,
+    "ast_hash": "c32677ff1a8444fc54b6dfa2c40c4f84",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/f2py": {
+    "mtime": 1779184554.7538066,
+    "ast_hash": "0ec491f89c0ab54d896e989ae9eff35b",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/pip3": {
+    "mtime": 1779184532.2673206,
+    "ast_hash": "396b37afb8b06fc85c90e011bd20b193",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.venv-graphify/bin/pip": {
+    "mtime": 1779184532.2670953,
+    "ast_hash": "396b37afb8b06fc85c90e011bd20b193",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/lib/utils.ts": {
+    "mtime": 1775792244.7659752,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/lib/industries.ts": {
+    "mtime": 1779120637.2307763,
+    "ast_hash": "371fd688d944c384b6a489e7e5d98b6b",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/lib/services.ts": {
+    "mtime": 1779120637.2297761,
+    "ast_hash": "8b821282068827aba9653ea9570c0eeb",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/lib/schemas.ts": {
+    "mtime": 1779120454.8510027,
+    "ast_hash": "43f3bb67539e5d2f09c4e9ca56e792f5",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/features-showcase.tsx": {
+    "mtime": 1776065086.541419,
+    "ast_hash": "2e7f0b9cddccea8d8b42635e22210b3e",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/navbar.tsx": {
+    "mtime": 1779120637.2267761,
+    "ast_hash": "29ca3a116995158d6d9604ec3ec9194c",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/schedule-form.tsx": {
+    "mtime": 1779120637.2277763,
+    "ast_hash": "d6cf3c7d64d293125d334fa21cf772fc",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-slider.tsx": {
+    "mtime": 1779120637.2247763,
+    "ast_hash": "2dc3dbd9fbf26c6dc6a7761f5ce34991",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/footer.tsx": {
+    "mtime": 1779120637.223776,
+    "ast_hash": "c7bedede8d2a7029f11a4d4c89c5fe06",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/lazy-hero-slider.tsx": {
+    "mtime": 1777190094.9550471,
+    "ast_hash": "88d35c32cdacb18be9fc8f119c011cf8",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/json-ld.tsx": {
+    "mtime": 1779120454.8510027,
+    "ast_hash": "45e57938bd0a03fcd3e077f9ec135cc6",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/input.tsx": {
+    "mtime": 1777251144.6804395,
+    "ast_hash": "0607b02d99a2e92f9509223f36ccc6ec",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/carousel.tsx": {
+    "mtime": 1775912327.474795,
+    "ast_hash": "0267b73e177c079adecf87c826d5b59c",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/card.tsx": {
+    "mtime": 1775797908.8431745,
+    "ast_hash": "77a10bd948ca424972a28e704a3df604",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/separator.tsx": {
+    "mtime": 1775797909.0541725,
+    "ast_hash": "3de2dca3e47ab29c4b1f632671545628",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/select.tsx": {
+    "mtime": 1777251145.1864433,
+    "ast_hash": "ab95f478cb74d1906b07425c15b124cc",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/badge.tsx": {
+    "mtime": 1775797908.9671733,
+    "ast_hash": "e4ec840217040d5630ee6ed7213a1d72",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/label.tsx": {
+    "mtime": 1777251144.872441,
+    "ast_hash": "a70440da86bfc6a07f15197cca48cb08",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/button.tsx": {
+    "mtime": 1775792244.6069741,
+    "ast_hash": "705bf3552a39e0c722665ccbecb30654",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/ui/textarea.tsx": {
+    "mtime": 1777251145.2864442,
+    "ast_hash": "d448d2a90e48542e51b93a1189127bf2",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-flow/icons.ts": {
+    "mtime": 1775912869.8457992,
+    "ast_hash": "65d78512a830f332682ab7ebba32759f",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-flow/index.tsx": {
+    "mtime": 1775912869.846426,
+    "ast_hash": "2e6b23b665353b5728058171004c2fd7",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-flow/hero-flow-canvas.tsx": {
+    "mtime": 1775917855.002635,
+    "ast_hash": "e391e7a6b7f04cade475d5286fd264f3",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-flow/flow-engine.ts": {
+    "mtime": 1776082171.0221343,
+    "ast_hash": "ce4d60331fa647dcd4f6601483c16301",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/components/hero-flow/flow.types.ts": {
+    "mtime": 1775912722.5903254,
+    "ast_hash": "5861b219a220aec7df036ba3d85e9fe3",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/.claude/settings.local.json": {
+    "mtime": 1775804583.949799,
+    "ast_hash": "2eedf40f558c91b15b16b606d107fc76",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/README.md": {
+    "mtime": 1776932204.1674576,
+    "ast_hash": "ade9b9086d6b7aee1f6f1b85713c3cef",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/AGENTS.md": {
+    "mtime": 1775791357.6452143,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/CLAUDE.md": {
+    "mtime": 1779120655.5918543,
+    "ast_hash": "5ae4e4fa48a32cce1e2b680b2a3b4cd4",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/docker-compose.yml": {
+    "mtime": 1776930971.8915792,
+    "ast_hash": "c95b614e2907e5947d5933bb7b9bca16",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/apple-touch-icon.png": {
+    "mtime": 1776081739.440625,
+    "ast_hash": "615caf399a03a5a49c21dd513a42bb95",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/app/apple-icon.png": {
+    "mtime": 1779120454.8500028,
+    "ast_hash": "615caf399a03a5a49c21dd513a42bb95",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/office-malaysia.svg": {
+    "mtime": 1776092890.3796248,
+    "ast_hash": "b0fea558f26c37b46986985bfd0d6119",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/code-preview.png": {
+    "mtime": 1775998007.5667188,
+    "ast_hash": "2c0749983d92421f83ddcaec21bb5d17",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/favicon-logo.svg": {
+    "mtime": 1776081815.0265026,
+    "ast_hash": "32e7bff7910e2f854850246ce74b0625",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/globe.svg": {
+    "mtime": 1775791314.4201767,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/window.svg": {
+    "mtime": 1775791314.4205377,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/hero-illustration.png": {
+    "mtime": 1775834415.356412,
+    "ast_hash": "2f33c279798df360077fdcded53916b5",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/performance-uptime.png": {
+    "mtime": 1777189944.8860557,
+    "ast_hash": "4a34123a2c58533ad2b3623446b8c306",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/next.svg": {
+    "mtime": 1775791314.4201767,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/office-bangladesh.svg": {
+    "mtime": 1776092312.5590186,
+    "ast_hash": "0f9e4403b8233099c34f4994b262ce3d",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/working-zenqbit.png": {
+    "mtime": 1777190005.3010793,
+    "ast_hash": "b2e86502fb312193b6834fd7cb2ee967",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/file.svg": {
+    "mtime": 1775791314.4176083,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/web-app-manifest-512x512.png": {
+    "mtime": 1776081739.4455132,
+    "ast_hash": "46f056428fd6a2055e25bc7e7afdb86b",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/tech-stack.png": {
+    "mtime": 1777189942.6343825,
+    "ast_hash": "f1264f4a2a6cb3aeaac649ebbccaabda",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/service-1.png": {
+    "mtime": 1777190001.3510582,
+    "ast_hash": "b63bc566e496762928bed000517cbece",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/vercel.svg": {
+    "mtime": 1775791314.4205377,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/project-delivery.png": {
+    "mtime": 1777189944.1177428,
+    "ast_hash": "b5cd0853226251ef3804d97579ddd498",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/team-work.png": {
+    "mtime": 1777143202.309227,
+    "ast_hash": "fd7220dfe66475316c8876ddabe62ddb",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/service-4.png": {
+    "mtime": 1777190003.628848,
+    "ast_hash": "f5e19c50ff120b906824a7ce83531b94",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/favicon.svg": {
+    "mtime": 1776081739.442173,
+    "ast_hash": "b51cca1cb6fa1110254c6f465e984491",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/favicon-96x96.png": {
+    "mtime": 1776081739.443337,
+    "ast_hash": "0e128aa7a1d13b8bce10e3a439722df0",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/service-2.png": {
+    "mtime": 1777190002.287972,
+    "ast_hash": "4c9484cf3fcb89cd5ca988f7c4a36764",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/web-app-manifest-192x192.png": {
+    "mtime": 1776081739.4445152,
+    "ast_hash": "f91b55c9fccbc2bf7e511f30ff7f8abf",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/hero-bg.webp": {
+    "mtime": 1777189298.6208968,
+    "ast_hash": "4f39e7565753b4099de0f37a46036c63",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/service-3.png": {
+    "mtime": 1777190003.142893,
+    "ast_hash": "6ab962d94d3db18f0980f0c5e19e87bc",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/logo.svg": {
+    "mtime": 1776081575.3683798,
+    "ast_hash": "09a22886466a0c31459ec3941ada2a41",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/team-scaling.png": {
+    "mtime": 1777189938.252862,
+    "ast_hash": "8992669670a2eba918bc814d0d1061b5",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/hero-bg.png": {
+    "mtime": 1775917208.4331446,
+    "ast_hash": "c4e5186b50e60318aee2ffcf30b21a49",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/security-compliance.png": {
+    "mtime": 1777189940.8830416,
+    "ast_hash": "5f2d9cac2bc23a64d6400512c622cc50",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/auto-mobile.png": {
+    "mtime": 1776076065.2636259,
+    "ast_hash": "86dc7f542e8aa0c88cc4a2ec3919a751",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/ai-lg.png": {
+    "mtime": 1776075443.169123,
+    "ast_hash": "f998e5723ea4533faf5220e89a70a403",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/auto-sm.png": {
+    "mtime": 1776076065.2646158,
+    "ast_hash": "fc64f6f1d0e652f60cad8e100f7a0091",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/iot-lg.png": {
+    "mtime": 1776075598.7169316,
+    "ast_hash": "11d023b3944cf352d557693c5fd103e2",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/app-mobile.png": {
+    "mtime": 1776075348.204987,
+    "ast_hash": "eb1febc0e51f911d1721b3fac34e1737",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/auto-lg.png": {
+    "mtime": 1776076065.2656152,
+    "ast_hash": "971505f2e0ca2805f256eb4222ef7163",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/iot-xl.png": {
+    "mtime": 1776075598.7177968,
+    "ast_hash": "0042177ca9b89a628c537500a395b9a6",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/web-mobile.png": {
+    "mtime": 1776071416.406265,
+    "ast_hash": "c34bc0d83f2c053a7a401f2fbcab3d60",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/app-lg.png": {
+    "mtime": 1776075348.2072122,
+    "ast_hash": "3186ec2070b0d9bd274d8179492b05d3",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/ai-xl.png": {
+    "mtime": 1776075443.1699367,
+    "ast_hash": "f703432d401545517657038fd4df3bdd",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/auto-xl.png": {
+    "mtime": 1776076065.2665472,
+    "ast_hash": "97b20ee7377f47b0e072590f2a9d49ac",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/web-xl.png": {
+    "mtime": 1776071416.409429,
+    "ast_hash": "db3e68bf15248d41d2918c256bd295a8",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/ai-mobile.png": {
+    "mtime": 1776075443.1670349,
+    "ast_hash": "02a9b5dda45ca80f6003b2510421cf18",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/iot-mobile.png": {
+    "mtime": 1776075598.7149732,
+    "ast_hash": "b387b45e2cb183eb409ce9b2e2732c0b",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/ai-sm.png": {
+    "mtime": 1776075443.1682475,
+    "ast_hash": "3bbca4183584de000725af96dc915cf1",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/iot-sm.png": {
+    "mtime": 1776075598.7160594,
+    "ast_hash": "25b004f75335e09b305407069ed9bc06",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/web-sm.png": {
+    "mtime": 1776071416.4075062,
+    "ast_hash": "694e9c2640e06020c5e2c98d01d97bfb",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/app-xl.png": {
+    "mtime": 1776075348.2083201,
+    "ast_hash": "46879814ebae2aa74624f5585a96e049",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/web-lg.png": {
+    "mtime": 1776071416.408499,
+    "ast_hash": "3acf9246a0eecbf27a950a59ee543040",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/services/app-sm.png": {
+    "mtime": 1776075348.2061694,
+    "ast_hash": "930b2221987959637c07166a06f1c705",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/12.jpg": {
+    "mtime": 1777189478.6924863,
+    "ast_hash": "83a1a172f3db77e4b5f4a197c2493e49",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/32.jpg": {
+    "mtime": 1777189479.1047697,
+    "ast_hash": "21adee12b27a39d68e89f040e7cc8ca4",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/25.jpg": {
+    "mtime": 1777189478.8987176,
+    "ast_hash": "d42804cc6430a2093ad5c6b6479bfa0e",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/68.jpg": {
+    "mtime": 1777189479.5125413,
+    "ast_hash": "6f100d8bc0ec56c5043adf817a99e7cc",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/15.jpg": {
+    "mtime": 1777189479.7620702,
+    "ast_hash": "03f7a8ded0cf3b072117734793d19f2f",
+    "semantic_hash": ""
+  },
+  "/home/maklu/Codes/zen/public/avatars/47.jpg": {
+    "mtime": 1777189479.3099194,
+    "ast_hash": "1a27f5c6a67d6f106140430b86bdfbda",
+    "semantic_hash": ""
+  }
+}
