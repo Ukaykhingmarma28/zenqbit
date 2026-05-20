@@ -49,7 +49,7 @@ export function FeaturesShowcase() {
       {cards.map((card, i) => (
         <div
           key={card.title}
-          className={`animate-fade-up delay-${Math.min(i + 1, 5)} group flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-card shadow-[0_1px_4px_0_rgb(0_0_0/0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_0_rgb(0_0_0/0.08)]`}
+          className={`animate-fade-up delay-${Math.min(i + 1, 5)} flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-card shadow-[0_1px_4px_0_rgb(0_0_0/0.04)]`}
         >
           <div className="px-5 pt-5 pb-2">
             <h3 className="text-sm font-semibold tracking-tight text-foreground">
@@ -66,7 +66,7 @@ export function FeaturesShowcase() {
                 alt={card.alt}
                 width={600}
                 height={400}
-                className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                className="h-auto w-full object-cover"
               />
             </div>
           </div>

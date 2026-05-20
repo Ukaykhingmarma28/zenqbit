@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { services } from "@/lib/services";
-import { industries } from "@/lib/industries";
+import { IndustriesSection } from "@/components/industries-section";
 import { HeroFlow } from "@/components/hero-flow";
 import { HeroSlider } from "@/components/hero-slider";
 import { FeaturesShowcase } from "@/components/features-showcase";
@@ -85,39 +85,20 @@ export default function Home() {
         Zenqbit — Custom Software, AI &amp; IoT Solutions in Malaysia and Bangladesh
       </h1>
 
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-muted/30 pb-40 lg:pb-52">
-        {/* Background image — dotted hands artwork */}
-        <Image
-          src="/hero-bg.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="absolute inset-0 -z-10 object-cover opacity-40"
-          aria-hidden="true"
-        />
-        {/* Soft overlay to keep content readable */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--foreground)/0.03)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_-20%,hsl(var(--primary)/0.08),transparent)]" />
-
-        <div className="mx-auto max-w-7xl px-6 text-center lg:pt-6">
-          {/* Hero slider */}
-          <div className="animate-fade-up">
-            <HeroSlider />
-          </div>
+      {/* ── Hero (slider includes BS23-style background) ── */}
+      <section className="relative overflow-hidden">
+        <div className="animate-fade-up">
+          <HeroSlider />
         </div>
 
-        {/* Reversed oval curve at bottom (dome arching up into the hero) */}
+        {/* Subtle curve at bottom — flatter on mobile so it doesn't look too round */}
         <svg
-          className="pointer-events-none absolute bottom-0 left-0 h-28 w-full lg:h-40"
-          viewBox="0 0 100 20"
+          className="pointer-events-none absolute bottom-0 left-0 h-12 w-full sm:h-20 lg:h-32"
+          viewBox="0 0 100 10"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <path d="M0,20 Q50,0 100,20 Z" className="fill-background" />
+          <path d="M0,10 Q50,0 100,10 Z" className="fill-background" />
         </svg>
       </section>
 
@@ -354,74 +335,7 @@ export default function Home() {
       </section>
 
       {/* ── Industries ── */}
-      <section id="industries" className="border-t py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          {/* Header */}
-          <div className="animate-fade-up mb-14 grid gap-6 lg:grid-cols-2 lg:items-end lg:mb-16">
-            <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-coral">
-                Industries We Serve
-              </p>
-              <h2 className="text-3xl font-bold leading-[1.15] tracking-tight sm:text-4xl lg:text-[44px]">
-                Industries We Power
-                <br />
-                with Innovation
-              </h2>
-            </div>
-            <p className="max-w-lg text-[15px] leading-relaxed text-muted-foreground lg:text-right">
-              We build tailored solutions for diverse industries — adapting to your
-              unique challenges and delivering technology that drives real business impact.
-            </p>
-          </div>
-
-          {/* Industry cards */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, i) => (
-              <Link
-                key={industry.slug}
-                href={`/industries/${industry.slug}`}
-                className={`animate-fade-up delay-${Math.min(i + 1, 5)} group/card flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-[3px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] dark:bg-card`}
-              >
-                {/* Colored top section */}
-                <div
-                  className="mx-2 mt-2 flex flex-1 flex-col rounded-2xl px-6 pb-5 pt-6"
-                  style={{ backgroundColor: industry.color }}
-                >
-                  <h3 className="text-[26px] font-extrabold leading-tight tracking-tight text-brand-dark">
-                    {industry.name}
-                  </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-brand-dark/60">
-                    {industry.tagline}
-                  </p>
-                </div>
-
-                {/* White footer */}
-                <div className="flex items-center justify-between px-6 py-4">
-                  <span className="text-[16px] font-bold text-brand-dark dark:text-foreground">
-                    Explore
-                  </span>
-                  <div className="flex size-9 items-center justify-center rounded-[10px] bg-[#f0f0f0] transition-colors duration-200 group-hover/card:bg-brand-dark dark:bg-muted dark:group-hover/card:bg-foreground">
-                    <ArrowRight className="size-4 text-brand-dark/70 transition-colors duration-200 group-hover/card:text-white dark:text-foreground/70 dark:group-hover/card:text-brand-dark" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-
-            {/* CTA card */}
-            <div className="animate-fade-up delay-5 flex flex-col items-center justify-center gap-5 overflow-hidden rounded-[20px] bg-white p-8 text-center shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:bg-card">
-              <h3 className="text-lg font-semibold">
-                Is your industry here?
-              </h3>
-              <Link
-                href="/contact"
-                className="inline-flex h-10 items-center rounded-full bg-brand-coral px-7 text-sm font-semibold text-white transition-all hover:bg-brand-coral/90"
-              >
-                Let&apos;s Talk
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustriesSection />
 
       {/* ── Development Excellence ── */}
       <section id="excellence" className="border-t py-20 lg:py-28">
