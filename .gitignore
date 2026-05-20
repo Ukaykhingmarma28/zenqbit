@@ -43,6 +43,9 @@ yarn-error.log*
 # graphify local Python env (use: .venv-graphify/bin/graphify update .)
 /.venv-graphify/
 
+# graphify cache (regenerated with `graphify update .`)
+graphify-out/cache/
+
 # debug scripts
 /scripts/
 

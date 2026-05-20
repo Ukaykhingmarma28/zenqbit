@@ -70,8 +70,9 @@ export function createFlow(
   canvas: HTMLCanvasElement,
   options: FlowOptions,
 ): FlowHandle {
-  const c = canvas.getContext("2d");
-  if (!c) return { destroy() {}, setColors() {} };
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return { destroy() {}, setColors() {} };
+  const c = ctx;
 
   const container = canvas.parentElement;
   if (!container) return { destroy() {}, setColors() {} };
