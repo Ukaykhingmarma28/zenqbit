@@ -199,9 +199,9 @@ export function createFlow(
       for (let j = 0; j < 2; j++) {
         particles.push({
           path,
-          delay: i * 0.12 + j * 0.55,
-          speed: 0.35 + Math.random() * 0.1,
-          progress: -(i * 0.12 + j * 0.55),
+          delay: i * 0.08 + j * 0.4,
+          speed: 0.55 + Math.random() * 0.15,
+          progress: -(i * 0.08 + j * 0.4),
         });
       }
     });
@@ -209,9 +209,9 @@ export function createFlow(
       for (let j = 0; j < 2; j++) {
         particles.push({
           path,
-          delay: i * 0.1 + j * 0.5,
-          speed: 0.35 + Math.random() * 0.1,
-          progress: -(i * 0.1 + j * 0.5),
+          delay: i * 0.07 + j * 0.35,
+          speed: 0.55 + Math.random() * 0.15,
+          progress: -(i * 0.07 + j * 0.35),
         });
       }
     });
@@ -350,24 +350,10 @@ export function createFlow(
     if (p.progress < 0 || p.progress > 1) return;
     const idx = Math.floor(p.progress * (p.path.length - 1));
     const pt = p.path[Math.min(idx, p.path.length - 1)];
-    const r = 3.5;
-    // glow
-    const grad = ctx!.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, r * 4);
-    grad.addColorStop(0, `${colors.accent}66`);
-    grad.addColorStop(1, `${colors.accent}00`);
-    ctx!.fillStyle = grad;
-    ctx!.beginPath();
-    ctx!.arc(pt.x, pt.y, r * 4, 0, Math.PI * 2);
-    ctx!.fill();
-    // core
+    const r = 4.5;
     ctx!.fillStyle = colors.accent;
     ctx!.beginPath();
     ctx!.arc(pt.x, pt.y, r, 0, Math.PI * 2);
-    ctx!.fill();
-    // bright center
-    ctx!.fillStyle = "rgba(255,255,255,0.85)";
-    ctx!.beginPath();
-    ctx!.arc(pt.x, pt.y, r * 0.45, 0, Math.PI * 2);
     ctx!.fill();
   }
 
@@ -465,12 +451,13 @@ export function createFlow(
       entranceT >= 1 && !reducedMotion ? Math.sin(loopTime * 0.002) * 2 : 0;
     drawCenterCard(L.mx, L.my, L.cardW, L.cardH, cardAlpha, bobY);
 
-    // Particles (skip if reduced motion)
-    if (!reducedMotion && entranceT >= 0.7) {
+    // Particles along edges
+    if (entranceT >= 0.7) {
       const pAlpha = Math.min(1, (entranceT - 0.7) / 0.3);
       ctx!.globalAlpha = pAlpha;
+      const speedScale = reducedMotion ? 0.5 : 1;
       particles.forEach((p) => {
-        p.progress += dt * p.speed;
+        p.progress += dt * p.speed * speedScale;
         if (p.progress > 1) {
           p.progress -= 1 + p.delay * p.speed;
         }
