@@ -210,9 +210,9 @@ export const services: Service[] = [
     ],
     useCases: [
       {
-        industry: "Fintech",
+        industry: "E-Commerce",
         description:
-          "Mobile banking app with biometric authentication, real-time transaction tracking, and peer-to-peer payments.",
+          "Mobile shopping app with biometric authentication, real-time order tracking, and seamless payment integration.",
       },
       {
         industry: "Healthcare",

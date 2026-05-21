@@ -51,7 +51,7 @@ export default function BlogPage() {
               Our engineering team is putting together a collection of articles
               and technical guides drawn from real project experience. We build
               custom software, AI systems, and IoT platforms for clients across
-              fintech, edtech, e-commerce, healthcare, and more — and we want
+              edtech, e-commerce, healthcare, and more — and we want
               to share what we&apos;ve learned along the way.
             </p>
             <p>
@@ -64,8 +64,7 @@ export default function BlogPage() {
             </p>
             <p>
               We&apos;ll also cover lessons learned from building products across
-              Southeast Asia — including navigating Malaysia&apos;s fintech
-              regulations, scaling platforms for Bangladesh&apos;s growing
+              Southeast Asia — scaling platforms for Bangladesh&apos;s growing
               digital market, and choosing the right cloud infrastructure for
               regional deployments.
             </p>

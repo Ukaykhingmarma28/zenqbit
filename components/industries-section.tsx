@@ -4,9 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { industries } from "@/lib/industries";
 
-const filtered = industries.filter(
-  (ind) => ind.slug !== "fintech" && ind.slug !== "telecom"
-);
+const filtered = industries;
 
 export function IndustriesSection() {
   return (

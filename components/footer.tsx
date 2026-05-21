@@ -2,13 +2,8 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
 const industries = [
-  { label: "Fintech", href: "/industries/fintech" },
   { label: "Pharma & Healthcare", href: "/industries/pharma-healthcare" },
-  { label: "Telecom", href: "/industries/telecom" },
   { label: "E-Commerce", href: "/industries/e-commerce" },
-];
-
-const industries2 = [
   { label: "EdTech", href: "/industries/edtech" },
   { label: "Retail", href: "/industries/retail" },
   { label: "Software & ITES", href: "/industries/software-ites" },
@@ -68,7 +63,7 @@ export function Footer() {
 
       {/* Footer links */}
       <div className="mx-auto max-w-7xl px-6 py-14 lg:py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Logo + description */}
           <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="focus-ring inline-block rounded-md">
@@ -100,28 +95,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Industries */}
+          {/* Industries — 2 columns */}
           <div className="space-y-3">
             <h4 className="text-sm font-semibold">Industries</h4>
-            <ul className="space-y-2.5">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               {industries.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries col 2 */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold opacity-0">Industries</h4>
-            <ul className="space-y-2.5">
-              {industries2.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -137,7 +115,7 @@ export function Footer() {
           {/* Company */}
           <div className="space-y-3">
             <h4 className="text-sm font-semibold">Company</h4>
-            <ul className="space-y-2.5">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-1">
               {company.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -154,7 +132,7 @@ export function Footer() {
           {/* Services */}
           <div className="space-y-3">
             <h4 className="text-sm font-semibold">Services</h4>
-            <ul className="space-y-2.5">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5 sm:grid-cols-1">
               {services.map((link) => (
                 <li key={link.label}>
                   <Link

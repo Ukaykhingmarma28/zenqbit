@@ -334,9 +334,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Industries ── */}
-      <IndustriesSection />
-
       {/* ── Development Excellence ── */}
       <section id="excellence" className="border-t py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
@@ -387,7 +384,7 @@ export default function Home() {
                   {
                     value: "8+",
                     label: "Industry Verticals",
-                    desc: "Deep domain knowledge across fintech, edtech, e-commerce, healthcare, telecom, retail, and more.",
+                    desc: "Deep domain knowledge across edtech, e-commerce, healthcare, retail, and more.",
                   },
                   {
                     value: "24/7",
@@ -444,6 +441,112 @@ export default function Home() {
                   <CheckCircle2 className="size-5 text-brand-teal" />
                 </div>
                 <span className="text-sm font-semibold">Vetted Engineers</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Industries ── */}
+      <IndustriesSection />
+
+      {/* ── Engineering Philosophy ── */}
+      <section className="relative overflow-hidden py-24 lg:py-32">
+        {/* Decorative background grid */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0H0v60' fill='none' stroke='%23000' stroke-width='.5'/%3E%3C/svg%3E\")"}} />
+        {/* Coral glow orb */}
+        <div className="pointer-events-none absolute -right-40 -top-40 size-[500px] rounded-full bg-brand-coral/[0.07] blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
+          {/* Header — manifesto style */}
+          <div className="mb-16 flex flex-col gap-6 lg:mb-24 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-brand-coral">
+                Our Manifesto
+              </p>
+              <h2 className="max-w-md text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:max-w-lg lg:text-6xl">
+                We don&apos;t just
+                <span className="text-brand-coral"> write code.</span>
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground lg:text-base">
+              We engineer outcomes. These are the beliefs that shape how we build, ship, and partner with you.
+            </p>
+          </div>
+
+          {/* Bento grid */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:gap-5">
+            {/* Card 1 — large */}
+            <div className="group relative overflow-hidden rounded-3xl border border-border/60 bg-muted/30 p-8 sm:p-10 lg:col-span-7">
+              <div className="absolute -bottom-10 -right-10 size-40 rounded-full bg-brand-coral/[0.04] blur-3xl transition-all duration-500 group-hover:bg-brand-coral/[0.08]" />
+              <span className="mb-6 inline-block font-mono text-7xl font-black leading-none text-brand-coral/15 sm:text-8xl">
+                01
+              </span>
+              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                Ship weekly, not quarterly.
+              </h3>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Small, frequent releases beat big-bang launches every time. You see progress every sprint — not every fiscal quarter.
+              </p>
+            </div>
+
+            {/* Card 2 — tall */}
+            <div className="group relative overflow-hidden rounded-3xl border border-border/60 bg-muted/30 p-8 sm:p-10 lg:col-span-5 lg:row-span-2">
+              <div className="absolute -bottom-10 -left-10 size-40 rounded-full bg-brand-coral/[0.04] blur-3xl transition-all duration-500 group-hover:bg-brand-coral/[0.08]" />
+              <span className="mb-6 inline-block font-mono text-7xl font-black leading-none text-brand-coral/15 sm:text-8xl">
+                02
+              </span>
+              <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                Your code.<br />Your IP.<br />Always.
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Full ownership from day one. No lock-in. No hostage situations. Every repo, every credential, every asset — it&apos;s yours to walk away with.
+              </p>
+              <div className="mt-8 flex items-center gap-3">
+                <div className="flex size-10 items-center justify-center rounded-full border border-brand-coral/30 text-brand-coral">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground/70">Zero lock-in guarantee</span>
+              </div>
+            </div>
+
+            {/* Card 3 — wide */}
+            <div className="group relative overflow-hidden rounded-3xl border border-border/60 bg-muted/30 p-8 sm:p-10 lg:col-span-7">
+              <div className="absolute -top-10 -right-10 size-40 rounded-full bg-brand-coral/[0.04] blur-3xl transition-all duration-500 group-hover:bg-brand-coral/[0.08]" />
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-10">
+                <span className="font-mono text-7xl font-black leading-none text-brand-coral/15 sm:text-8xl">
+                  03
+                </span>
+                <div>
+                  <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                    AI-first, human-verified.
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    We use AI to move fast, but every line gets human eyes before production. Speed without recklessness.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4 — full width accent */}
+            <div className="group relative overflow-hidden rounded-3xl border border-brand-coral/20 bg-brand-coral/[0.04] p-8 sm:p-10 lg:col-span-12">
+              <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex items-start gap-6 sm:items-center sm:gap-10">
+                  <span className="font-mono text-7xl font-black leading-none text-brand-coral/20 sm:text-8xl">
+                    04
+                  </span>
+                  <div>
+                    <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                      No long contracts.
+                    </h3>
+                    <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
+                      We disappear when you don&apos;t need us. Stay because we deliver, not because you&apos;re stuck.
+                    </p>
+                  </div>
+                </div>
+                <div className="shrink-0 rounded-full border border-brand-coral/40 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-brand-coral">
+                  Month-to-month
+                </div>
               </div>
             </div>
           </div>

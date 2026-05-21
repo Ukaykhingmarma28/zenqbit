@@ -1,9 +1,7 @@
 import {
   GraduationCap,
-  Landmark,
   ShoppingCart,
   HeartPulse,
-  Radio,
   Store,
   Code2,
   Rocket,
@@ -114,83 +112,6 @@ export const industries: Industry[] = [
         question: "What about accessibility compliance?",
         answer:
           "All our EdTech platforms are built to WCAG 2.1 AA standards. We include screen reader support, keyboard navigation, captioning for video content, and high-contrast themes.",
-      },
-    ],
-  },
-  {
-    icon: Landmark,
-    name: "Fintech",
-    slug: "fintech",
-    tagline: "Secure, scalable financial platforms",
-    description:
-      "We build secure, regulation-compliant fintech platforms for businesses in Malaysia, Bangladesh, and across Asia. From payment gateways and lending systems to blockchain solutions and KYC/AML workflows — our financial software is built with security-first architecture, real-time processing, and audit trails that satisfy regulators.",
-    tags: ["Payments", "Blockchain", "Lending", "KYC", "Risk Management"],
-    color: "#e8cdb5",
-    tagColor: "#d9b99a",
-    features: [
-      {
-        title: "Payment Processing",
-        description:
-          "Custom payment gateways, multi-currency support, recurring billing, and integrations with Stripe, PayPal, and local payment providers.",
-      },
-      {
-        title: "Lending & Credit Platforms",
-        description:
-          "End-to-end lending systems with automated credit scoring, loan origination, disbursement, and collections workflows.",
-      },
-      {
-        title: "KYC & AML Compliance",
-        description:
-          "Identity verification, document validation, sanctions screening, and transaction monitoring — meeting regulatory requirements across jurisdictions.",
-      },
-      {
-        title: "Blockchain & Web3",
-        description:
-          "Smart contract development, tokenization platforms, decentralized exchanges, and blockchain-based audit trails for financial transparency.",
-      },
-      {
-        title: "Risk Management",
-        description:
-          "Real-time fraud detection, credit risk modeling, and regulatory reporting dashboards powered by ML algorithms.",
-      },
-      {
-        title: "Core Banking Integration",
-        description:
-          "API-first architecture connecting with core banking systems, SWIFT networks, and financial data providers.",
-      },
-    ],
-    useCases: [
-      {
-        title: "Digital Wallet Platform",
-        description:
-          "Launched a mobile-first digital wallet supporting P2P transfers, bill payments, and merchant QR payments across Southeast Asia.",
-      },
-      {
-        title: "SME Lending Platform",
-        description:
-          "Built an automated lending platform that processes loan applications in under 5 minutes using AI credit scoring and bank statement analysis.",
-      },
-      {
-        title: "Crypto Exchange",
-        description:
-          "Developed a custodial crypto exchange with real-time order matching, multi-chain wallet infrastructure, and regulatory reporting.",
-      },
-    ],
-    faqs: [
-      {
-        question: "How do you ensure security for financial applications?",
-        answer:
-          "We follow OWASP guidelines, implement end-to-end encryption, use HSMs for key management, and conduct regular penetration testing. All our fintech solutions include comprehensive audit trails and access controls.",
-      },
-      {
-        question: "Which regulations do you cover?",
-        answer:
-          "We build compliance into the architecture from day one. We've worked with PCI-DSS, PSD2, SOC 2, KYC/AML regulations across Asia, Europe, and North America. We partner with compliance consultants for jurisdiction-specific requirements.",
-      },
-      {
-        question: "Can you handle real-time transaction processing?",
-        answer:
-          "Yes. Our event-driven architectures process thousands of transactions per second with sub-100ms latency. We use message queues, in-memory databases, and auto-scaling infrastructure to handle peak loads.",
       },
     ],
   },
@@ -345,83 +266,6 @@ export const industries: Industry[] = [
         question: "How do you handle PHI (Protected Health Information)?",
         answer:
           "PHI is encrypted at rest and in transit, stored only in BAA-covered infrastructure, and accessed only through role-based controls with full audit logging. We follow the principle of minimum necessary access.",
-      },
-    ],
-  },
-  {
-    icon: Radio,
-    name: "Telecom",
-    slug: "telecom",
-    tagline: "Enterprise-grade connectivity solutions",
-    description:
-      "We build enterprise-grade telecom applications that scale to serve millions of subscribers across Asia. VoIP platforms, network management systems, billing engines, and IoT connectivity solutions — our telecom software handles the throughput, reliability, and uptime that operators in Malaysia, Bangladesh, and the wider region demand.",
-    tags: ["VoIP", "Network Management", "Billing", "IoT", "5G"],
-    color: "#d6e8f5",
-    tagColor: "#bcd8ee",
-    features: [
-      {
-        title: "VoIP & Communication Platforms",
-        description:
-          "SIP-based voice, video, and messaging platforms with call routing, IVR systems, and WebRTC-based browser calling.",
-      },
-      {
-        title: "Network Management",
-        description:
-          "Real-time network monitoring, fault detection, capacity planning, and automated incident response for telecom infrastructure.",
-      },
-      {
-        title: "Billing & Revenue Management",
-        description:
-          "Usage-based billing engines, subscription management, invoice generation, and revenue assurance systems handling millions of CDRs.",
-      },
-      {
-        title: "IoT Connectivity",
-        description:
-          "SIM management platforms, device connectivity orchestration, and data routing for IoT deployments on cellular networks.",
-      },
-      {
-        title: "Customer Self-Service",
-        description:
-          "Subscriber portals for plan management, usage monitoring, payment processing, and support ticket management.",
-      },
-      {
-        title: "Analytics & Reporting",
-        description:
-          "Network performance dashboards, churn prediction models, and regulatory reporting automation for telecom operators.",
-      },
-    ],
-    useCases: [
-      {
-        title: "MVNO Launch Platform",
-        description:
-          "Built the complete tech stack for a mobile virtual network operator — subscriber management, billing, and self-service portal — launched in 14 weeks.",
-      },
-      {
-        title: "Enterprise UCaaS",
-        description:
-          "Unified communications platform with voice, video, messaging, and presence — serving 50,000+ enterprise users across 8 countries.",
-      },
-      {
-        title: "Network Analytics",
-        description:
-          "Real-time network monitoring dashboard processing 2M+ events per minute with ML-powered anomaly detection and automated alerting.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Can you handle telecom-scale throughput?",
-        answer:
-          "Yes. Our architectures are built for high-throughput, low-latency processing — handling millions of CDRs, thousands of concurrent calls, and real-time network events. We use event-driven architectures with horizontal scaling.",
-      },
-      {
-        question: "Do you have experience with telecom regulations?",
-        answer:
-          "We've worked within regulatory frameworks across multiple jurisdictions. We build compliance into the platform — number portability, lawful intercept interfaces, data retention policies, and regulatory reporting.",
-      },
-      {
-        question: "Can you integrate with existing telecom infrastructure?",
-        answer:
-          "Yes. We work with SIP trunks, SS7 gateways, IMS cores, and modern cloud-native telecom infrastructure. We can bridge legacy and modern systems during migration.",
       },
     ],
   },
@@ -628,9 +472,9 @@ export const industries: Industry[] = [
           "Built an MVP patient engagement app in 10 weeks that helped the founder raise $2M seed round on the strength of early traction.",
       },
       {
-        title: "Series A Fintech",
+        title: "Series A SaaS",
         description:
-          "Scaled a payment platform from 1,000 to 200,000 monthly transactions after Series A — re-architecting for reliability without downtime.",
+          "Scaled a SaaS platform from 1,000 to 200,000 monthly active users after Series A — re-architecting for reliability without downtime.",
       },
       {
         title: "Marketplace Startup",

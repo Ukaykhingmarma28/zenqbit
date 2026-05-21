@@ -4,6 +4,7 @@ import { Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schemas";
 import "./globals.css";
 
@@ -99,10 +100,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
-      className={`${uncutSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${uncutSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <SmoothScroll />
         {/* TODO: Add analytics before launch — Google Analytics, Vercel Analytics, or similar */}
         {/* Example: <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" strategy="afterInteractive" /> */}
         <JsonLd data={getOrganizationSchema()} />
